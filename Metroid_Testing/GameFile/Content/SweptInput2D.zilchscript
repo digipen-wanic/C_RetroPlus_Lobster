@@ -1,0 +1,112 @@
+// Copyright 2017 DigiPen USA Corporation, All Rights Reserved
+// Author: Zero Engine Team
+// Edit by: Andrew Yan
+// Date Edited: 03/27/2019
+// Simple input for a 2d swept character controller.
+class SweptInput2D : ZilchComponent
+{
+  [Dependency] var SweptController : SweptController;
+  
+  [Property] var LeftKey : Keys = Keys.A;
+  [Property] var RightKey : Keys = Keys.D;
+  [Property] var JumpKey : Keys = Keys.Space;
+  
+  /* Added */
+  //Spinning sprite to be played when jumping
+  [Property]
+  var JumpSprite : SpriteSource = null;
+  //Run animation to be played (Only for left and right direction)
+  [Property]
+  var RunningAnimation : SpriteSource = null;
+  //The idle pose for the player
+  [Property]
+  var StationarySprite : SpriteSource = null;
+  //The noise to be played when the player jumps
+  [Property]
+  var JumpNoise : SoundCue = null;
+  
+  //A boolean to keep track if the player is running
+  var RunningBoolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Real3 to keep track of the movement
+    var movement = Real3(0, 0, 0);
+    
+    // Check for left/right movment
+    if (Zero.Keyboard.KeyIsDown(this.LeftKey))
+    {
+      //made to be += instead of = so that if both are pressed that they cancel them out
+      movement.X += -1;
+      
+      //Safety check for sprite/animation
+      if(this.RunningAnimation != null)
+      {
+        this.Owner.Sprite.SpriteSource = this.RunningAnimation;
+      }
+      //Flip sprite
+      this.Owner.Sprite.FlipX = true;
+      this.RunningBoolean = true;
+    }
+    else if (Zero.Keyboard.KeyIsDown(this.RightKey))
+    {
+      //made to be += instead of = so that if both are pressed that they cancel them out
+      movement.X += 1;
+      
+      //Safety check for sprite/animation
+      if(this.RunningAnimation != null)
+      {
+        this.Owner.Sprite.SpriteSource = this.RunningAnimation;
+      }
+      //Flip sprite
+      this.Owner.Sprite.FlipX = false;
+      this.RunningBoolean = true;
+    }
+    //This is to cover an edge case with the animations
+    else
+    {
+      //Set running to false if there is no running input
+      this.RunningBoolean = false;
+    }
+    
+    if (Zero.Keyboard.KeyIsPressed(this.JumpKey))
+    {
+      //Safety check for sprite/animation
+      if(this.JumpSprite != null)
+      {
+        this.Owner.Sprite.SpriteSource = this.JumpSprite;
+      }
+      
+      this.SweptController.Jump();
+      
+      if(this.SweptController.Jumping)
+      {
+        //Used for non looping sound effects
+        this.Space.SoundSpace.PlayCue(this.JumpNoise);
+      }
+    }
+    else if (Zero.Keyboard.KeyIsReleased(this.JumpKey))
+    {
+      this.SweptController.JumpCancel();
+    }
+    
+    //This is to cover an edge case with the animations
+    if(!this.RunningBoolean && this.Owner.SweptController.Grounded)
+    {
+      this.Owner.Sprite.SpriteSource = this.StationarySprite;
+    }
+    //This is to cover an edge case with the animations
+    if(this.RunningBoolean && !this.Owner.SweptController.Grounded)
+    {
+      this.Owner.Sprite.SpriteSource = this.JumpSprite;
+    }
+    
+    //Updates the player's movement
+    this.SweptController.Update(movement, event.Dt);
+  }
+}

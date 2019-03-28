@@ -1,0 +1,79 @@
+/************************************
+File Name : PlayerShooting
+By: Andrew Yan
+Last Edited: 03/27/2019
+Description: This script will handle how the player shoots and object
+************************************/
+class PlayerShooting : ZilchComponent
+{
+  [Dependency]
+  var Sprite : Sprite;
+  [Dependency]
+  var SweptInput2D : SweptInput2D;
+  
+  //Object to be spawned as the bullet
+  [Property]
+  var BulletArch : Archetype = null;
+  //Button to be pressed to shoot
+  [Property]
+  var FireButt : Keys = Keys.Space;
+  //The speed of the bullet
+  [Property]
+  var BullSpeed : Real = 0.25;
+  
+  //This variable keeps track of the last button pressed
+  var LastButtPressed : Keys = Keys.A;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Series of if and else if statements to set what was the last key pressed
+    if(Zero.Keyboard.KeyIsDown(this.SweptInput2D.RightKey))
+    {
+      //Set LastButtPressed to equal whatever the right key is
+      this.LastButtPressed = this.SweptInput2D.RightKey;
+    }
+    else if(Zero.Keyboard.KeyIsDown(this.SweptInput2D.LeftKey))
+    {
+      //Set LastButtPressed to equal whatever the left key is
+      this.LastButtPressed = this.SweptInput2D.LeftKey;
+    }
+    
+    //This if statement makes sure the right button was pressed and that there is an archetype to spawn
+    if(Zero.Keyboard.KeyIsPressed(this.FireButt) && this.BulletArch != null)
+    {
+      //Call function to shoot object
+      this.ShootObj();
+    }
+  }
+  
+  //Function shoots object
+  function ShootObj()
+  {
+    //Gets position at which to spawn
+    var spawnPos = this.Owner.Transform.Translation;
+    //How to create object
+    var projPis = this.Space.CreateAtPosition(this.BulletArch, spawnPos);
+    
+    //Spawn object depending on input
+    if(this.LastButtPressed == this.SweptInput2D.RightKey)
+    {
+      //Spawns object in appropriate direction
+      projPis.RigidBody.Velocity = Real3(1, 0, 0) * this.BullSpeed;
+    }
+    else if(this.LastButtPressed == this.SweptInput2D.LeftKey)
+    {
+      //Spawns object in appropriate direction
+      projPis.RigidBody.Velocity = Real3(-1, 0, 0) * this.BullSpeed;
+    }
+    else if(Zero.Keyboard.KeyIsDown(this.SweptInput2D.JumpKey))
+    {
+      //Spawns object in appropriate direction
+      projPis.RigidBody.Velocity = Real3(0, 1, 0) * this.BullSpeed;
+    }
+  }
+}
