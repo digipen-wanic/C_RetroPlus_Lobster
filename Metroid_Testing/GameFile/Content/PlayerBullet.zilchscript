@@ -1,0 +1,31 @@
+/************************************
+File Name : PlayerBullet
+By: Andrew Yan
+Last Edited: 03/28/2019
+Description: This script will handle how the player bullet works
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class PlayerBullet : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    this.LevelSettings.LevelVariables.PlayerBullet += 1;
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    this.Owner.Destroy();
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //This is used to check if the owner is about to be destroyed
+    if(this.Owner.MarkedForDestruction)
+    {
+      //This is used to reset the current player bullet num
+      this.LevelSettings.LevelVariables.PlayerBullet -= 1;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "PowerUp"
+		var ResourceId = 0x5cc62be2b95bd03b
+	}
+}

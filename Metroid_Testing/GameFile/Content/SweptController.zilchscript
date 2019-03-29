@@ -1,6 +1,8 @@
 // Copyright 2014 DigiPen USA Corporation, All Rights Reserved
 // Author: Zero Engine Team
 
+// Edited By: Andrew Yan
+
 // The user will need to make their own script for peripheral input.
 // Each LogicUpdate, the input script should determine the direction of
 // desired movement (does not need to be normalized) and pass it to the

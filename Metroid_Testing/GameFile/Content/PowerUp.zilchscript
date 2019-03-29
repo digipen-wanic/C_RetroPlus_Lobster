@@ -1,0 +1,43 @@
+/************************************
+File Name : PowerUp
+By: Andrew Yan
+Last Edited: 03/28/2019
+Description: This script will only help turn on and off levelvariable booleans
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class PowerUp : ZilchComponent
+{
+  //Boolean to see if the owner powerup should be the morphball
+  [Property]
+  var MorphBall : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    //Series of if and else if statements to see what powerup the owner is
+    if(this.MorphBall)
+    {
+      //Set the power up to be true
+      this.LevelSettings.LevelVariables.MorphBool = true;
+    }
+    /*
+    //If you want to add another power up this is how to do so
+      //If you want to add more make sure to just repeat this process
+    
+    //This boolean is used to check what the owner is
+    else if(this.*PropertyName*)
+    {
+      //The ability boolean must be made in the levelvariables script.
+        //Other scripts will then reference that to see what powerups there is
+      this.LevelSettings.LevelVariables.*AbilityName* = true;
+    }
+    */
+    
+    //Destroys the owner after making contact with the player
+    this.Owner.Destroy();
+  }
+}

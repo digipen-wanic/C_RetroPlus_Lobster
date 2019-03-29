@@ -3,6 +3,7 @@ File Name : Timed Death
 By: Andrew Yan
 Last Edited: 03/27/2019
 Description: This script will make the owner die after a set amount of time
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
 ************************************/
 class TimedDeath : ZilchComponent
 {

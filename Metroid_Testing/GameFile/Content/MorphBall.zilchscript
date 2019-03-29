@@ -1,0 +1,44 @@
+/************************************
+File Name : MorphBall
+By: Andrew Yan
+Last Edited: 03/28/2019
+Description: This script will help spawn the morphball
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class MorphBall : ZilchComponent
+{
+  [Dependency]
+  var SweptInput2D : SweptInput2D;
+  [Dependency]
+  var SweptController : SweptController;
+  
+  //The object to be spawned as the morph ball
+  [Property]
+  var MorphBallArch : Archetype = null;
+  
+  //The vertical offset the morph ball will be spawned at 
+  [Property]
+  var VertOffset : Real = 0.25;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Checks to see if the player has the powerup, if the there is an archetype to spawn, and if the player is grounded
+    if(this.LevelSettings.LevelVariables.MorphBool && this.MorphBallArch != null && this.SweptController.Grounded)
+    {
+      //Checks to see if the down button was pressed
+     if(Zero.Keyboard.KeyIsDown(this.SweptInput2D.DownKey))
+     {
+        //Spawns the morph ball archetype with the offset 
+        this.Space.CreateAtPosition(this.MorphBallArch, Real3(this.Owner.Transform.Translation.X, this.VertOffset + this.Owner.Transform.Translation.Y, this.Owner.Transform.Translation.Z));
+        
+        //Destroys the owner afterwards
+        this.Owner.Destroy();
+      }
+    }
+  }
+}
