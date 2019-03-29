@@ -4,8 +4,8 @@ Cog
 	var Name = "Sprite"
 	Transform 
 	{
-		var Translation = Real3{1.97054946, 0.523569107, 0}
-		var Scale = Real3{0.25, 0.25, 1}
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -18,7 +18,7 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{1, 1, 1, 1}
+		var VertexColor = Real4{0.819607913, 0.435294151, 0.188235313, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5274db4c2e7c11f9:Circle"
 		var FlipX = false
@@ -42,30 +42,14 @@ Cog
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "5cc7679b31211f54:PlayerBullet"
+		var CollisionGroup = "5cc7679f31ad8610:Player"
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
-	TimedDeath 
+	MorphBallMovement 
 	{
-		var TimeTilDeath = 0.5
-	}
-	IgnoreSpaceEffects 
-	{
-		var IgnoreDrag = true
-		var IgnoreFlow = true
-		var IgnoreForce = true
-		var IgnoreGravity = true
-		var IgnorePointForce = true
-		var IgnorePointGravity = true
-		var IgnoreThrust = true
-		var IgnoreVortex = true
-		var IgnoreWind = true
-		var IgnoreTorque = true
-		var IgnoreBuoyancy = true
-		var IgnoreCustom = true
-	}
-	PlayerBullet 
-	{
+		var PlayerArch = "5cc61202deaefc98:StandingSamus"
+		var RollSpeed = 1
+		var VertOffset = 1
 	}
 }

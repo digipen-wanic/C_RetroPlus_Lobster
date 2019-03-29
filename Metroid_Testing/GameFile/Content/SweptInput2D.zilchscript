@@ -7,11 +7,14 @@ class SweptInput2D : ZilchComponent
 {
   [Dependency] var SweptController : SweptController;
   
-  [Property] var LeftKey : Keys = Keys.A;
-  [Property] var RightKey : Keys = Keys.D;
-  [Property] var JumpKey : Keys = Keys.Space;
+  var LeftKey : Keys = Keys.A;
+  var RightKey : Keys = Keys.D;
+  var JumpKey : Keys = Keys.Space;
   
   /* Added */
+  //The button to be pressed to turn into the morphball
+  
+  var DownKey : Keys = Keys.S;
   //Spinning sprite to be played when jumping
   [Property]
   var JumpSprite : SpriteSource = null;
@@ -30,6 +33,12 @@ class SweptInput2D : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
+    //Set all the keys here
+    this.LeftKey = this.LevelSettings.LevelVariables.LeftKey;
+    this.RightKey = this.LevelSettings.LevelVariables.RightKey;
+    this.DownKey = this.LevelSettings.LevelVariables.DownKey;
+    this.JumpKey = this.LevelSettings.LevelVariables.JumpKey;
+    
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 

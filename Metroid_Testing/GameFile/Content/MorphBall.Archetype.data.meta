@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "MorphBall"
+		var ResourceId = 0x5cc611fd5ff08f38
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
