@@ -1,0 +1,25 @@
+[Version:1]
+CollisionTable 
+{
+	var RegisteredGroups = Array
+	{
+		"5cc7679b31211f54:PlayerBullet"
+		"4e740859314e5515:DefaultGroup"
+		"5cc7679f31ad8610:Player"
+	}
+	var CollisionFilters = Array
+	{
+		Object
+		{
+			var TypeA = "5cc7679f31ad8610:Player"
+			var TypeB = "5cc7679b31211f54:PlayerBullet"
+			var SkipResolution = false
+			var SkipDetectingCollision = true
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+	}
+	var AutoRegister = true
+}
