@@ -1,7 +1,7 @@
 /*************************************
 LZoomerAi.zilchscript
 Last Edited By: Hunter Bradley
-Last Edit Date: 3/28/19
+Last Edit Date: 3/29/19
 Creation Date: 3/28/19
 The Ai and Animation Controls for the Zoomer 
 *************************************/
@@ -13,6 +13,10 @@ class LZoomerAi : ZilchComponent
   //Requires Transformation
   [Dependency]
   var Transformation : Transform = null;
+  //Requires Transformation
+  [Dependency]
+  var Oriantation : Orientation = null;
+  
   
   //Health of Zoomer
   [Property]
@@ -29,10 +33,13 @@ class LZoomerAi : ZilchComponent
   [Property]
   var Energy : Real = 0;
   
+  var PreviousPosition : Real3 = Real3(0, 0, 0);
+  
   function Initialize(init : CogInitializer)
   {
     //Sets the SplineFollower Speed to ZoomerSpeed
     this.SplineFollower.Speed = this.Speed;
+    this.PreviousPosition = this.Transformation.Translation;
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
@@ -62,28 +69,30 @@ class LZoomerAi : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    //Switch the Animation of the Zoomers for when the change direction.
     
-    //If Zoomer goes up a Right wall
-    if(true)
+    //Switch the Animation of the Zoomers for when the change direction.
+    var pos = this.Transformation.Translation - this.PreviousPosition;
+    
+    //If Zoomer goes up a Right wall 
+    if(pos.X > 0)
     {
-      this.Transformation.Rotation.Z == 270;
+     this.Oriantation.LocalOrientationBasis.Z == 1;
     }
     
     //If Zoomer goes up a Left wall
-    else if(true)
+    else if(pos.X < 0)
     {
       this.Transformation.Rotation.Z == 90;
     }
     
     //If Zoomer on the Floor
-    else if(true)
+    else if(pos.Y < 0)
     {
       this.Transformation.Rotation.Z == 0;
     }
     
     //If Zoomer on the Ceiling
-    else if(true)
+    else if(pos.Y > 0)
     {
       this.Transformation.Rotation.Z == 180;
     }
@@ -97,6 +106,8 @@ class LZoomerAi : ZilchComponent
       {
         
       }
+      
+      this.PreviousPosition = this.Transformation.Translation;
       
     }
   }
