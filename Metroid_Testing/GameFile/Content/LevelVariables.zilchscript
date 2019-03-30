@@ -19,16 +19,16 @@ class LevelVariables : ZilchComponent
   //This boolean helps keep track if the palyer is in the morphball or not
   [Property]
   var BallingBool : Boolean = false;
-  
+  //The universal key for up
   [Property]
   var JumpKey : Keys = Keys.W;
-  
+  //The universal key for right
   [Property]
   var RightKey : Keys = Keys.D;
-  
+  //The universal key for left
   [Property]
   var LeftKey : Keys = Keys.A;
-  
+  //The universal key for down
   [Property]
   var DownKey : Keys = Keys.S;
 }

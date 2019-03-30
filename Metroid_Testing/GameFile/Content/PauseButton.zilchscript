@@ -1,0 +1,39 @@
+/************************************
+File Name : PauseButton
+By: Andrew Yan
+Last Edited: 03/29/2019
+Description: This script will help handle pausing and playing the game
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class PauseButton : ZilchComponent
+{
+  //The button to be pressed to pause the game
+  [Property]
+  var PauseKey : Keys = Keys.Escape;
+  
+  //This is a variable to help keep track of whether time space is paused or not
+  var Toggle : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //This is used because it updates no matter if the game is paused or not
+    Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+  }
+
+  function OnKeyDown(event : KeyboardEvent)
+  {
+    //Check to see if the pause button was pressed
+    if(event.Key == this.PauseKey)
+    {
+      //If statements to check if time is paused or not
+      if(!this.Space.TimeSpace.Paused) 
+      {
+        this.Space.TimeSpace.Paused = true;
+      }
+      else
+      {
+        this.Space.TimeSpace.Paused = false;
+      }
+    }
+  }
+}

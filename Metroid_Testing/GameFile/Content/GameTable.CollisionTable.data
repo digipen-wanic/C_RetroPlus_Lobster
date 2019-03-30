@@ -7,6 +7,8 @@ CollisionTable
 		"5cc62bbdbff4043b:PowerUp"
 		"4e740859314e5515:DefaultGroup"
 		"5cc7679f31ad8610:Player"
+		"5cc5c66941fd2fe2:Enemy"
+		"5cc5c7ce1a26c073:Door"
 	}
 	var CollisionFilters = Array
 	{
@@ -26,6 +28,93 @@ CollisionTable
 			var TypeA = "5cc7679f31ad8610:Player"
 			var TypeB = "5cc62bbdbff4043b:PowerUp"
 			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = true
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+			CollisionStartBlock 
+			{
+				var SendEventsToA = true
+				var SendEventsToB = true
+				var SendEventsToSpace = false
+				var EventOverride = ""
+			}
+		}
+		Object
+		{
+			var TypeA = "5cc7679b31211f54:PlayerBullet"
+			var TypeB = "5cc62bbdbff4043b:PowerUp"
+			var SkipResolution = true
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5cc5c66941fd2fe2:Enemy"
+			var TypeB = "5cc62bbdbff4043b:PowerUp"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5cc5c66941fd2fe2:Enemy"
+			var TypeB = "5cc7679f31ad8610:Player"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = true
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+			CollisionStartBlock 
+			{
+				var SendEventsToA = true
+				var SendEventsToB = true
+				var SendEventsToSpace = false
+				var EventOverride = ""
+			}
+		}
+		Object
+		{
+			var TypeA = "5cc5c66941fd2fe2:Enemy"
+			var TypeB = "5cc7679b31211f54:PlayerBullet"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = true
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+			CollisionStartBlock 
+			{
+				var SendEventsToA = true
+				var SendEventsToB = true
+				var SendEventsToSpace = false
+				var EventOverride = ""
+			}
+		}
+		Object
+		{
+			var TypeA = "5cc5c7ce1a26c073:Door"
+			var TypeB = "5cc7679b31211f54:PlayerBullet"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5cc5c7ce1a26c073:Door"
+			var TypeB = "5cc7679f31ad8610:Player"
+			var SkipResolution = true
 			var SkipDetectingCollision = false
 			var StartEvent = true
 			var EndEvent = false

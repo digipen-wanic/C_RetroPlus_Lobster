@@ -93,6 +93,14 @@ Cog
 		var MorphBallArch = "5cc611fd5ff08f38:MorphBall"
 		var VertOffset = 0
 	}
+	PauseButton 
+	{
+		var PauseKey = Keys.Q
+	}
+	BasicDoor 
+	{
+		var NextLevel = "59097123da28242a:Level"
+	}
 	Hierarchy 
 	{
 	}

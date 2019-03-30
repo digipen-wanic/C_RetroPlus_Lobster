@@ -1,0 +1,103 @@
+/*************************************
+LZoomerAi.zilchscript
+Last Edited By: Hunter Bradley
+Last Edit Date: 3/28/19
+Creation Date: 3/28/19
+The Ai and Animation Controls for the Zoomer 
+*************************************/
+class LZoomerAi : ZilchComponent
+{
+  //Requires SplineFollower
+  [Dependency]
+  var SplineFollower : SimpleSplineFollower = null;
+  //Requires Transformation
+  [Dependency]
+  var Transformation : Transform = null;
+  
+  //Health of Zoomer
+  [Property]
+  var Health : Real = 0;
+  //If True, Enemy is Dead.
+  var DeathTrue : Boolean = false;
+  //Speed of Zoomer
+  [Property]
+  var Speed : Real = 0;
+  //Damage of Zoomer
+  [Property]
+  var Damage : Real = 0;
+  //Energy output if energy drop
+  [Property]
+  var Energy : Real = 0;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Sets the SplineFollower Speed to ZoomerSpeed
+    this.SplineFollower.Speed = this.Speed;
+    
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    //Send Damage to Player if it collided with the player
+    if(true)
+    {
+      
+    }
+    
+    //Damage Zoomer if Player hits it with weapon
+    if(true)
+    {
+      
+    }
+    
+    //Cause Death of Enemy if health 0
+    if(this.Health <= 0)
+    {
+      this.DeathTrue = true;
+    }
+    
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Switch the Animation of the Zoomers for when the change direction.
+    
+    //If Zoomer goes up a Right wall
+    if(true)
+    {
+      this.Transformation.Rotation.Z == 270;
+    }
+    
+    //If Zoomer goes up a Left wall
+    else if(true)
+    {
+      this.Transformation.Rotation.Z == 90;
+    }
+    
+    //If Zoomer on the Floor
+    else if(true)
+    {
+      this.Transformation.Rotation.Z == 0;
+    }
+    
+    //If Zoomer on the Ceiling
+    else if(true)
+    {
+      this.Transformation.Rotation.Z == 180;
+    }
+    
+    //If enemy is Dead
+    if(this.DeathTrue == true)
+    {
+      this.Owner.Destroy;
+      //Spawn it an orb of Energy if enemy is Destroyed
+      if(this.Energy != 0)
+      {
+        
+      }
+      
+    }
+  }
+}

@@ -4,7 +4,7 @@ Cog
 	var Name = "Sprite"
 	Transform 
 	{
-		var Translation = Real3{1.97054946, 0.523569107, 0}
+		var Translation = Real3{0, 0, 0}
 		var Scale = Real3{0.25, 0.25, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -67,5 +67,10 @@ Cog
 	}
 	PlayerBullet 
 	{
+	}
+	DeathOnTouch 
+	{
+		var NextLevel = "59097123da28242a:Level"
+		var Bullet = true
 	}
 }

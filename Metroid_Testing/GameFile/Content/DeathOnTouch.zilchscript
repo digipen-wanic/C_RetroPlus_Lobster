@@ -1,0 +1,29 @@
+//Destroy this script and write actual damage system
+class DeathOnTouch : ZilchComponent
+{
+  [Property]
+  var NextLevel : Level = null;
+  
+  [Property]
+  var Bullet : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    if(this.NextLevel != null)
+    {
+      if(!this.Bullet && event.OtherObject.BoxCollider.CollisionGroup.Name == "Player")
+      {
+        this.Space.LoadLevel(this.NextLevel);
+      }
+      else
+      {
+        event.OtherObject.Destroy();
+      }
+    }
+  }
+}
