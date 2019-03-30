@@ -6,7 +6,6 @@ Grapple Lasso
 Supper Missile 
 Dark Beam 
 Light Beam 
-Seeker Launcher
 Power Bomb
 Annihilator Beam
 BattleHammer
