@@ -11,4 +11,14 @@ Annihilator Beam
 BattleHammer
 Volt Driver 
 Shock Coil
-
+Spring Ball 
+Plasma Beam 
+Hyper Beam 
+Phazon Beam
+Magmaul 
+Judicator 
+Imperialist 
+Nova Beam 
+Diffusion Beam 
+Electro Lob 
+Zero Laser 
