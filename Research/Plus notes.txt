@@ -1,24 +1,22 @@
-Spazer Beam 
-Ice Missile
-Seeker Missile
-Grapple Voltage
-Grapple Lasso
-Supper Missile 
-Dark Beam 
-Light Beam 
-Power Bomb
-Annihilator Beam
-BattleHammer
-Volt Driver 
-Shock Coil
-Spring Ball 
-Plasma Beam 
-Hyper Beam 
-Phazon Beam
-Magmaul 
-Judicator 
-Imperialist 
-Nova Beam 
-Diffusion Beam 
-Electro Lob 
-Zero Laser 
+Spazer Beam stars:4
+Seeker Missile stars:3
+Grapple Lasso stars:3
+Diffusion Missile stars:5
+Dark Beam stars:4.5
+Light Beam stars:4.5
+Power Bombs stars:5
+BattleHammer stars:4.5
+Volt Driver stars:3.5
+Plasma Beam stars:3.25
+Hyper Beam (super metroid) stars:4.25
+Magmaul stars:4.25
+Diffusion Beam stars:5
+Zero Laser stars:3.5
+Hyper Ball stars:4.5
+spring Ball stars:5
+Flamethrower stars:4.5
+Lockjaw stars:5
+Speed Booster stars:3.5
+SenseMove stars:5
+Jump Boots stars:4.25
+Space Jump Boots stars:3.5
