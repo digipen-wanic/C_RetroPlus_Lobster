@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "ZoomerMovement"
+		var ResourceId = 0x5cf89cb7c5cc72c9
+	}
+}

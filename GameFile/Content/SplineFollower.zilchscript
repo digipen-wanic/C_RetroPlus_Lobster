@@ -209,8 +209,9 @@ class SimpleSplineFollower : ZilchComponent
       // distance to the max distance of the spline
       else if(this.LoopMode == SimpleLoopMode.Stop)
         this.CurrentDistance = Math.Clamp(this.CurrentDistance, 0.0, totalDistance);
-      else if(this.LoopMode == SimpleLoopMode.Continue)
+      else if(this.LoopMode == SimpleLoopMode.Continue && totalDistance != 0)
+      {
         this.CurrentDistance = Math.FMod(this.CurrentDistance, totalDistance);
-        
+      }
   }
 }
