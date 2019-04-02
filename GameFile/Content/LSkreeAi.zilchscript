@@ -1,0 +1,71 @@
+/*************************************************
+LSkreeAi.zilchscript
+Last Edited By: Hunter Bradley
+Last Edit Date: 4/2/19
+Creation Date: 4/2/19
+Skree Ai Script
+
+*************************************************/
+
+class LSkreeAi : ZilchComponent
+{
+  [Dependency]
+  var Transformation : Transform = null;
+  [Dependency]
+  var RidgedBody : RigidBody = null;
+  //The Size of the Zone the Skree will drop from.
+  [Property]
+  var ZoneSize : Integer = 0;
+  //A Switch to say if its falling or not to turn off search code.
+  var IsFalling : Boolean = false;
+  //Targets the Cog
+  [Property]
+  var PlayerCog : CogPath = null;
+  //Health of Skree
+  [Property]
+  var Health : Real = 0;
+  //If True, Enemy is Dead.
+  var DeathTrue : Boolean = false;
+  //Speed of Skree Fall
+  [Property]
+  var Speed : Real = 0;
+  //Damage Skree does when falling
+  [Property]
+  var Damage : Real = 0;
+  //Energy output if energy drop
+  [Property]
+  var Energy : Real = 0;
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var newPlayerPos = this.PlayerCog.Cog.Transform.Translation.X;
+    var rightPos = this.Transformation.Translation.X + this.ZoneSize;
+    var leftPos = this.Transformation.Translation.X - this.ZoneSize;
+    //Searches if player is in a trigger zone.
+    if(!(this.IsFalling))
+    {
+      if(rightPos <= newPlayerPos || leftPos >= newPlayerPos)
+      {
+        //this.RidgedBody.DynamicState;
+        this.IsFalling == true;
+        Console.WriteLine("Entered Zone.");
+      }
+    }
+    else
+    {
+      if(rightPos > newPlayerPos && leftPos < newPlayerPos)
+      {
+        this.RidgedBody.DynamicState;
+        this.IsFalling == false;
+        Console.WriteLine("Exited Zone");
+      }
+    }
+    
+  }
+}
