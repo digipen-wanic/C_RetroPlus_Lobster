@@ -168,6 +168,7 @@ class SimpleSplineFollower : ZilchComponent
     }
     
     this.Owner.Transform.Translation = pos;
+    
     if(this.RotateOn)
     {
       this.UpdateOrientation(forward);
@@ -176,8 +177,8 @@ class SimpleSplineFollower : ZilchComponent
   
   function UpdateOrientation(forward : Real3)
   {
-    var currForward = Math.Slerp(this.OldForward, forward, 0.1);
-    this.Orientation.LookAtDirection(currForward);
+    var currForward = Math.Slerp(this.OldForward, forward, 1);
+    this.Orientation.LookAtDirectionWithUp(currForward, this.Orientation.WorldUp);
     this.OldForward = currForward;
   }
   
@@ -210,7 +211,6 @@ class SimpleSplineFollower : ZilchComponent
         this.CurrentDistance = Math.Clamp(this.CurrentDistance, 0.0, totalDistance);
       else if(this.LoopMode == SimpleLoopMode.Continue)
         this.CurrentDistance = Math.FMod(this.CurrentDistance, totalDistance);
-        
         
   }
 }
