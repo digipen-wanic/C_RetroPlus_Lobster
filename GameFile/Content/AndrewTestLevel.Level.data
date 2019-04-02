@@ -88,7 +88,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.00473392, 3.68455219, 20}
+			var Translation = Real3{-2.64503479, 1.82422042, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -141,7 +141,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 22.1034374
+			var Size = 18.0967636
 		}
 		EditorCameraController 
 		{
@@ -150,7 +150,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.00473392, 3.68455219, 0}
+			var LookTarget = Real3{-2.64503479, 1.82422042, 0}
 			var MoveSensitivity = 1
 		}
 	}
@@ -286,10 +286,76 @@ Level
 					var Active = true
 					var AttenuationScale = 1
 				}
+				Hierarchy 
+				{
+					Cog [Id:0x5cf89c7bdcec4412][ContextId:7]
+					{
+						var Name = "LeftEdge"
+						Transform 
+						{
+							var Translation = Real3{-5, 1.99999976, 0}
+							var Scale = Real3{1, 22, 1}
+							var Rotation = Quaternion{0, 0, 0, 1}
+						}
+						Sprite 
+						{
+							var Visible = true
+							var ViewCulling = true
+							var VisibilityEvents = true
+							var OverrideBoundingBox = false
+							var LocalAabbCenter = Real3{0, 0, 0}
+							var LocalAabbHalfExtents = Real3{1, 1, 1}
+							var GroupSortValue = 0
+							var Material = "582c575af53d18c9:AlphaSprite"
+							var VertexColor = Real4{1, 1, 1, 1}
+							var GeometryMode = SpriteGeometryMode.ZPlane
+							var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+							var FlipX = false
+							var FlipY = false
+							var AnimationActive = true
+							var AnimationSpeed = 1
+							var StartFrame = 0
+						}
+						BoxCollider 
+						{
+							var Ghost = false
+							var SendsEvents = true
+							var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+							var CollisionGroup = "5cf89c0fd3e406d7:LeftEdge"
+							var Offset = Real3{0, 0, 0}
+							var HalfSize = Real3{0.5, 0.5, 0.5}
+						}
+						RigidBody 
+						{
+							var Velocity = Real3{0, 0, 0}
+							var AngularVelocity = Real3{0, 0, 0}
+							var DynamicState = RigidBodyDynamicState.Dynamic
+							var AllowSleep = true
+							var Asleep = false
+							var RotationLocked = false
+							var Mode2D = Mode2DStates.InheritFromSpace
+						}
+						IgnoreSpaceEffects 
+						{
+							var IgnoreDrag = true
+							var IgnoreFlow = true
+							var IgnoreForce = true
+							var IgnoreGravity = true
+							var IgnorePointForce = true
+							var IgnorePointGravity = true
+							var IgnoreThrust = true
+							var IgnoreVortex = true
+							var IgnoreWind = true
+							var IgnoreTorque = true
+							var IgnoreBuoyancy = true
+							var IgnoreCustom = true
+						}
+					}
+				}
 			}
 		}
 	}
-	Cog [InheritId:"5cc1b5fc09e986aa:PlayerBullet"][ContextId:7]
+	Cog [InheritId:"5cc1b5fc09e986aa:PlayerBullet"][ContextId:8]
 	{
 		Transform 
 		{
@@ -298,7 +364,7 @@ Level
 			var Scale = Real3{0.25, 0.25, 1}
 		}
 	}
-	Cog [ContextId:8]
+	Cog [ContextId:9]
 	{
 		var Name = "PowerUp"
 		Transform 
@@ -365,7 +431,7 @@ Level
 			var IgnoreCustom = true
 		}
 	}
-	Cog [ContextId:9]
+	Cog [ContextId:10]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -413,7 +479,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var Cog = 10
+				var Cog = 11
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -430,13 +496,13 @@ Level
 			var Ghost = false
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "5cc5c66941fd2fe2:Enemy"
+			var CollisionGroup = "5cf89c16d29d1589:Zoomer"
 			var Offset = Real3{0, 0, 0}
 			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
 		DeathOnTouch 
 		{
-			var NextLevel = "59097123da28242a:Level"
+			var NextLevel = "59097123da28242a:AndrewTestLevel"
 			var Bullet = false
 		}
 		RigidBody 
@@ -450,7 +516,7 @@ Level
 			var Mode2D = Mode2DStates.InheritFromSpace
 		}
 	}
-	Cog [ContextId:10]
+	Cog [ContextId:11]
 	{
 		var Name = "Spline"
 		Transform 
@@ -478,7 +544,7 @@ Level
 		}
 		Hierarchy 
 		{
-			Cog [Id:0x59a4ff0724b8b78a][ContextId:11]
+			Cog [Id:0x59a4ff0724b8b78a][ContextId:12]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -497,7 +563,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d6ad19f61449][ContextId:12]
+			Cog [Id:0x5cf9d6ad19f61449][ContextId:13]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -516,7 +582,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d6401e49da63][ContextId:13]
+			Cog [Id:0x5cf9d6401e49da63][ContextId:14]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -535,7 +601,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d6791fa283e2][ContextId:14]
+			Cog [Id:0x5cf9d6791fa283e2][ContextId:15]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -554,7 +620,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d66b11ba5501][ContextId:15]
+			Cog [Id:0x5cf9d66b11ba5501][ContextId:16]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -573,7 +639,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d665135498c0][ContextId:16]
+			Cog [Id:0x5cf9d665135498c0][ContextId:17]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -592,7 +658,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x5cf9d611153c47db][ContextId:17]
+			Cog [Id:0x5cf9d611153c47db][ContextId:18]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -611,7 +677,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x59a4fa03b8d1806a][ContextId:18]
+			Cog [Id:0x59a4fa03b8d1806a][ContextId:19]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -630,7 +696,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x59a4fa01b87864f4][ContextId:19]
+			Cog [Id:0x59a4fa01b87864f4][ContextId:20]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -649,7 +715,7 @@ Level
 					var OverrideSelections = true
 				}
 			}
-			Cog [Id:0x59a4fa1cba019b30][ContextId:20]
+			Cog [Id:0x59a4fa1cba019b30][ContextId:21]
 			{
 				var Name = "ControlPoint"
 				Transform 
@@ -670,12 +736,12 @@ Level
 			}
 		}
 	}
-	Cog [ContextId:21]
+	Cog [ContextId:22]
 	{
 		var Name = "Door"
 		Transform 
 		{
-			var Translation = Real3{7.54925919, -4.95593596, 0}
+			var Translation = Real3{7.54925919, 2.04406404, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -718,7 +784,7 @@ Level
 			var Mode2D = Mode2DStates.InheritFromSpace
 		}
 	}
-	Cog [ContextId:22]
+	Cog [ContextId:23]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -744,12 +810,12 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5cf9d42dd671efe5:Level_TileMap01"
+			var Source = "5cf89edf0c95fc74:AndrewTestLevel_TileMap00"
 			var PaletteName = "5cc5daa6c3a98a68:GameTileMap"
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:23]
+	Cog [ContextId:24]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -778,7 +844,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:24]
+	Cog [ContextId:25]
 	{
 		var Name = "Sprite"
 		Transform 
