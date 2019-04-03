@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "StartButton_None"
+		var ResourceId = 0x5c47ba523250f994
+	}
+}

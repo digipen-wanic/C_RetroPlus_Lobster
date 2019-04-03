@@ -57,7 +57,7 @@ class SweptInput2D : ZilchComponent
       movement.X += -1;
       
       //Safety check for sprite/animation
-      if(this.RunningAnimation != null)
+      if(this.RunningAnimation != null && this.Owner.Sprite.SpriteSource != this.RunningAnimation)
       {
         this.Owner.Sprite.SpriteSource = this.RunningAnimation;
       }
@@ -71,7 +71,7 @@ class SweptInput2D : ZilchComponent
       movement.X += 1;
       
       //Safety check for sprite/animation
-      if(this.RunningAnimation != null)
+      if(this.RunningAnimation != null && this.Owner.Sprite.SpriteSource != this.RunningAnimation)
       {
         this.Owner.Sprite.SpriteSource = this.RunningAnimation;
       }
@@ -80,7 +80,7 @@ class SweptInput2D : ZilchComponent
       this.RunningBoolean = true;
     }
     //This is to cover an edge case with the animations
-    else
+    else if(!Zero.Keyboard.KeyIsDown(this.RightKey) && !Zero.Keyboard.KeyIsDown(this.LeftKey))
     {
       //Set running to false if there is no running input
       this.RunningBoolean = false;

@@ -3,7 +3,7 @@ DataContent
 {
 	DataBuilder 
 	{
-		var Name = "Level"
+		var Name = "TestLevel"
 		var ResourceId = 0x59097123da28242a
 		var LoaderType = "Level"
 		var Version = 0

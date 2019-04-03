@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "LobsterSamusTransitionRoll"
+		var ResourceId = 0x5c7875599f3f4e0f
+		var FrameSizeX = 50
+		var FrameSizeY = 75
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 25
+		var OriginY = 37
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
