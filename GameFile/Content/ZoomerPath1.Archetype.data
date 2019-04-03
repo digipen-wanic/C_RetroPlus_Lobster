@@ -1,0 +1,174 @@
+[Version:1]
+Cog 
+{
+	var Name = "ZoomerPath1"
+	Transform 
+	{
+		var Translation = Real3{-8.5, 11, 0}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	HierarchySpline 
+	{
+		var Closed = true
+		var SplineType = SplineType.Linear
+		var Error = 0.00999999978
+		var DebugDrawSpline = true
+		var SplineColor = Real4{1, 1, 1, 1}
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c44540dc23d5621]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{3, -7.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c44540dc23d5648]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{3, -16.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c44548b298d9b6b]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{7, -16.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c445489280e6d1e]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{7, -11.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c44549728b1d864]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{6, -11.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c44549528c499ea]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{6, -9.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c4454932f4d05b6]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{5, -9.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+		Cog [Id:0x5c44549e2fc7e0b0]
+		{
+			var Name = "Transform"
+			Transform 
+			{
+				var Translation = Real3{5, -7.5, 0}
+				var Scale = Real3{1, 1, 1}
+				var Rotation = Quaternion{0, 0, 0, 1}
+			}
+			SelectionIcon 
+			{
+				var Visible = true
+				var VisibilityEvents = true
+				var Material = "56581e2bb81777be:DebugDrawOnTop"
+				var SpriteSource = "58f8e4be736fa133:SelectIcon"
+				var ViewScale = 1
+				var OverrideSelections = true
+			}
+		}
+	}
+}
