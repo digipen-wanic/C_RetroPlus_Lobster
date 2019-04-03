@@ -150,7 +150,7 @@ class SweptController : ZilchComponent
   // Used to specify what types of physics objects are wanted
   // in the collision query.
   var CastFilter : CastFilter = null;
-
+  
   // List of kinematic objects detected during the controller's update.
   // Copied to KinematicContacts at the end of the update.
   var KinematicPending : Array[Cog] = Array[Cog]();
@@ -159,7 +159,13 @@ class SweptController : ZilchComponent
   // Used to run sweep with the velocities of kinematic objects so that
   // the character can be moved by them.
   var KinematicContacts : Array[Cog] = Array[Cog]();
-
+  
+  /* Added */
+  //This variable keeps track of the amount of current jumps
+  var JumpCount : Integer = 1;
+  //Boolean to check if the player is able to jump
+  var JumpBool : Boolean = true;
+  
   function Initialize(init : CogInitializer)
   {
     // In case the user is much too busy to be bothered with such details.
@@ -188,6 +194,27 @@ class SweptController : ZilchComponent
     // character moving into a platform.
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollision);
     Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollision);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  //This is used to check every frame if the owner is grounded or not
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //This is used to see if the owner can jump or not
+    if(this.JumpCount <= this.LevelSettings.LevelVariables.MaxJumps)
+    {
+      this.JumpBool = true;
+    }
+    else
+    {
+      this.JumpBool = false;
+    }
+    
+    //Resets jump counter if grounded
+    if(this.Grounded)
+    {
+      this.JumpCount = 1;
+    }
   }
 
   // Utility function for changing WorldUp at run time and
@@ -206,14 +233,13 @@ class SweptController : ZilchComponent
   // User does not need to check for grounded or anything else before calling.
   function Jump()
   {
-    if (this.Grounded)
-    {
-      // ControllerVelocity will not already have any velocity on the
-      // WorldUp axis when grounded, can simply add jump velocity.
-      this.ControllerVelocity += this.WorldUp * this.JumpSpeed;
-      this.Grounded = false;
-      this.Jumping = true;
-    }
+    //Increases the jump counter
+    this.JumpCount += 1;
+    // ControllerVelocity will not already have any velocity on the
+    // WorldUp axis when grounded, can simply add jump velocity.
+    this.ControllerVelocity += this.WorldUp * this.JumpSpeed;
+    this.Grounded = false;
+    this.Jumping = true;
   }
 
   // Will cause the character to jump unconditionally.

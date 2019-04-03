@@ -1,0 +1,31 @@
+/****************************************
+File Name: BasicCameraMovement
+By: Andrew Yan
+Last Edited: 04/02/2019
+Description: This script will be attached to the camera and help it follow the desired target
+Disclaimer: This script isnt the final version of the camera movement and is only being used for testing
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+****************************************/
+class BasicCameraMovement : ZilchComponent
+{
+  //This is the target for the camera to follow
+  [Property]
+  var Target : CogPath = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //This is to make sure it was set properly so we dont crash
+    if(this.Target.Cog != null)
+    {
+      var newPos = this.Target.Cog.Transform.Translation;
+      //adjust z value so the camera doesnt get messed up
+      newPos.Z = this.Owner.Transform.Translation.Z;
+      this.Owner.Transform.Translation = newPos;
+    }
+  }
+}
