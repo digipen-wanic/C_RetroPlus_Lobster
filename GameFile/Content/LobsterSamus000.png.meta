@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "LobsterSamus000"
+		var ResourceId = 0x5c44504b018d6d69
+		var FrameSizeX = 18
+		var FrameSizeY = 36
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 9
+		var OriginY = 18
+		var PixelsPerUnit = 18
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

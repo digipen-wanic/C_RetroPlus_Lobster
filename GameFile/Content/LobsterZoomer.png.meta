@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "LobsterZoomer"
+		var ResourceId = 0x5c478348820c4494
+		var FrameSizeX = 16
+		var FrameSizeY = 28
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 8
+		var OriginY = 14
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
