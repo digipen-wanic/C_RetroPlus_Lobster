@@ -1,0 +1,37 @@
+/************************************
+File Name : LevelVariables
+By: Andrew Yan
+Last Edited: 04/02/2019
+Description: This script will handle all global variables for each level
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class LevelVariables : ZilchComponent
+{
+  //Max amount of bullets the player can have on the screen
+  [Property]
+  var MaxPlayerBull : Integer = 3;
+  //The current number of player bullets on the screen
+  [Property]
+  var PlayerBullet : Integer = 1;
+  //This is a boolean to help control if the player has collected the power up or not
+  [Property]
+  var MorphBool : Boolean = false;
+  //This boolean helps keep track if the palyer is in the morphball or not
+  [Property]
+  var BallingBool : Boolean = false;
+  //The universal key for up
+  [Property]
+  var JumpKey : Keys = Keys.W;
+  //The universal key for right
+  [Property]
+  var RightKey : Keys = Keys.D;
+  //The universal key for left
+  [Property]
+  var LeftKey : Keys = Keys.A;
+  //The universal key for down
+  [Property]
+  var DownKey : Keys = Keys.S;
+  //The max number of jumps the player can have
+  [Property]
+  var MaxJumps : Integer = 1;
+}

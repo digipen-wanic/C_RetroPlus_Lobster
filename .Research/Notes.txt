@@ -1,0 +1,13 @@
+All low level enemies dispense 5 en power pellets
+You can't take damage right after the game has loaded
+You can jump through doors, hence the door just moves you over
+Damage
+    getting hit by an enemy does 8 dmg
+    getting hit by a Scree's rocks does 5 damage
+HP cap is 99
+You can't spin jump and then aim up. You can only aim to the side.
+
+Enemy: Scree
+They can travel a maximum of 4 blocks on the x-axis
+It takes 65 frames for the scree to travel 13 frames, 5 frames to travel the distance of one block.
+The scree only moves once every other frame

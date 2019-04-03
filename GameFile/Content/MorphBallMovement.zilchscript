@@ -1,0 +1,66 @@
+/************************************
+File Name : MorphBallMovement
+By: Andrew Yan
+Last Edited: 03/28/2019
+Description: This script will handle the movement for the MorphBall
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class MorphBallMovement : ZilchComponent
+{
+  [Dependency]
+  var RigidBody : RigidBody;
+  
+  //This is the standing archetype to be spawned
+  [Property]
+  var PlayerArch : Archetype = null;
+  
+  //The speed at which the player rolls
+  [Property]
+  var RollSpeed : Real = 10;
+  
+  //This is the vertical offset to spawn the standing player at
+  [Property]
+  var VertOffset : Real = 0.25;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.LevelSettings.LevelVariables.BallingBool = true;
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //A variable to keep track of the direction to move to
+    var movement = Real3();
+    //A variable to keep track of what is the right key
+    var rightKey = this.LevelSettings.LevelVariables.RightKey;
+    //A variable to keep track of what is the left key
+    var leftKey = this.LevelSettings.LevelVariables.LeftKey;
+    //A variable to keep track of what is the jump key
+    var jumpKey = this.LevelSettings.LevelVariables.JumpKey;
+    
+    //Checks to see if the owner should move left or right
+    if(Zero.Keyboard.KeyIsDown(rightKey))
+    {
+      movement += Real3(this.RollSpeed, 0, 0);
+    }
+    else if(Zero.Keyboard.KeyIsDown(leftKey))
+    {
+      movement -= Real3(this.RollSpeed, 0 ,0);
+    }
+    
+    //Checks to see if the player is trying to jump and that there is an object to spawn
+    if(Zero.Keyboard.KeyIsDown(jumpKey) && this.PlayerArch != null)
+    {
+      //Spawns the player with the offset
+      this.Space.CreateAtPosition(this.PlayerArch, Real3(this.Owner.Transform.Translation.X, this.VertOffset + this.Owner.Transform.Translation.Y, this.Owner.Transform.Translation.Z));
+      
+      //Set the level variable to stop balling
+      this.LevelSettings.LevelVariables.BallingBool = false;
+      //Destroys the owner
+      this.Owner.Destroy();
+    }
+    
+    this.Owner.RigidBody.Velocity += movement;
+  }
+}

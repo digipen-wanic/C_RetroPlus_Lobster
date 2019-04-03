@@ -1,0 +1,28 @@
+/************************************
+File Name : SoundOnDeath
+By: Andrew Yan
+Last Edited: 03/29/2019
+Description: This script will help handle playing sound cues on owners death
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class SoundOnDeath : ZilchComponent
+{
+  //Sound to be played on the owner's death
+  [Property]
+  var SoundCue : SoundCue = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //This checks to see if the owner is about to be destroyed and a safety check
+    if(this.Owner.MarkedForDestruction && this.SoundCue != null)
+    {
+      //Plays the sound cue
+      this.Space.SoundSpace.PlayCue(this.SoundCue);
+    }
+  }
+}

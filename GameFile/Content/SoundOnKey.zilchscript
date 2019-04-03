@@ -1,0 +1,31 @@
+/************************************
+File Name : SoundOnKey
+By: Andrew Yan
+Last Edited: 03/29/2019
+Description: This script will help handle playing sound cues on a specified key
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class SoundOnKey : ZilchComponent
+{
+  //This is the key to be pressed to play the sound
+  [Property]
+  var KeyForCue : Keys = Keys.W;
+  //This is the sound cue to be played
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Checks to see if the right key was pressed and checks if there is a sound cue to play
+    if(Zero.Keyboard.KeyIsDown(this.KeyForCue) && this.SoundToPlay != null)
+    {
+      //Plays the sound cue
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+    }
+  }
+}

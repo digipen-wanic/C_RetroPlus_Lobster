@@ -1,0 +1,8 @@
+[Version:1]
+ContentLibrary 
+{
+	var Name = "Metroid_Testing"
+	var LibraryId = 0x5cc2c216784e04af
+	var SourceControlType = ""
+	var ReadOnly = false
+}

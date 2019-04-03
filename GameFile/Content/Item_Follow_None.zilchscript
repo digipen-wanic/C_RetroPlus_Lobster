@@ -1,0 +1,32 @@
+/***********
+Hunter Bradley
+10/3/18
+This allows an item to follow the player Object
+***********/
+
+class Item_Follow : ZilchComponent
+{
+  //this is the target for the cammera to follow
+  [Property]
+  var Target : CogPath = null;
+  [Property]
+  var ItemDisplace : Real3;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //this will make sure the cog is set prperly so it doesn't crash
+    if(this.Target.Cog != null)
+    {
+      var targetPos = this.Target.Cog.Transform.Translation;
+      var itemOffSet = this.ItemDisplace;
+      //adjust the z value so the camera doesn't mess up
+      targetPos.Z = this.Owner.Transform.Translation.Z;
+      this.Owner.Transform.Translation = targetPos + itemOffSet;
+    }
+  }
+}

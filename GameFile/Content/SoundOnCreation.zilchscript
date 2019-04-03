@@ -1,0 +1,23 @@
+/************************************
+File Name : SoundOnCreation
+By: Andrew Yan
+Last Edited: 03/29/2019
+Description: This script will help handle playing sound cues on owners creation
+All content © 2019 DigiPen (USA) Corporation, all rights reserved
+************************************/
+class SoundOnCreation : ZilchComponent
+{
+  //The sound to be played
+  [Property]
+  var SoundCue : SoundCue = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Safety Check
+    if(this.SoundCue != null)
+    {
+      //Play Sound
+      this.Space.SoundSpace.PlayCue(this.SoundCue);
+    }
+  }
+}

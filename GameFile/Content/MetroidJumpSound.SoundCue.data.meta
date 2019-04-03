@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "MetroidJumpSound"
+		var ResourceId = 0x5c4454bb277821ae
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

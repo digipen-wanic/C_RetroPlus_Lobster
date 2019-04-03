@@ -1,0 +1,37 @@
+/***************************************************
+HUDCreator
+Last Edited By: Hunter Bradley
+Last Edit Date: 4/1/19
+Creation Date: 4/1/19
+Brief: Creates a HUD Level on top of the current Main Levels.
+***************************************************/
+class HUDCreator : ZilchComponent
+{
+  //Level to be made in the new Space
+  [Property]
+  var HUDLevel : Level = null;
+  //a link to the new space
+  var HUDSpace : Space = null;
+  
+  
+  function Initialize(init : CogInitializer)
+  {
+    //this creates a new space
+    this.HUDSpace = this.GameSession.CreateNamedSpace("HUDSpace", Archetype.Space);
+    if(this.HUDSpace != null)
+    {
+      this.HUDSpace.LoadLevel(this.HUDLevel);
+    }
+  }
+  //when this object is destroyed make sure to remove 
+  //the new space as well
+  function Destroyed()
+  {
+    //Make sure HUDSpace is still there and not going to be destroyed
+    if(this.HUDSpace != null && !this.HUDSpace.MarkedForDestruction)
+    {
+      this.HUDSpace.Destroy();
+    }
+  }
+  
+}

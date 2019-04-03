@@ -1,0 +1,108 @@
+[Version:1]
+Cog 
+{
+	var Name = "StandingSamus"
+	Transform 
+	{
+		var Translation = Real3{-7, 9.25, 1}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	Sprite 
+	{
+		var Visible = true
+		var ViewCulling = true
+		var VisibilityEvents = true
+		var OverrideBoundingBox = false
+		var LocalAabbCenter = Real3{0, 0, 0}
+		var LocalAabbHalfExtents = Real3{1, 1, 1}
+		var GroupSortValue = 0
+		var Material = "582c575af53d18c9:AlphaSprite"
+		var VertexColor = Real4{1, 1, 1, 1}
+		var GeometryMode = SpriteGeometryMode.ZPlane
+		var SpriteSource = "5c78776837f153bb:LobsterSamusRightShootIdle_0"
+		var FlipX = false
+		var FlipY = false
+		var AnimationActive = true
+		var AnimationSpeed = 1
+		var StartFrame = 0
+	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Dynamic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	BoxCollider 
+	{
+		var Ghost = false
+		var SendsEvents = true
+		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+		var CollisionGroup = "5cc7679f31ad8610:Player"
+		var Offset = Real3{0, 0, 0}
+		var HalfSize = Real3{0.5, 0.899999976, 0.5}
+	}
+	SweptController 
+	{
+		var WorldUp = Real3{0, 1, 0}
+		var LockZAxis = false
+		var ForwardEvents = false
+		var Gravity = 20
+		var JumpSpeed = 15
+		var JumpCancelFactor = 0.5
+		var MaxMoveSpeed = 10
+		var MaxFallSpeed = 50
+		var GroundAcceleration = 50
+		var AirAcceleration = 10
+		var GroundDeceleration = 50
+		var AirDeceleration = 10
+		var MaxGroundSlope = 45
+		var MaxCeilingSlope = 45
+		var GroundSnapDistance = 0.100000001
+		var ControllerVelocity = Real3{0, 0, 0}
+		var Grounded = true
+		var Jumping = false
+		var GroundTraction = 1
+		var AirTraction = 1
+	}
+	SweptInput2D 
+	{
+		var JumpSprite = "5c7875b6ef2365bb:LobsterSamusTransitionRoll_0"
+		var RunningAnimation = "5c44553a94e32b46:LobsterSamusWalkRight_0"
+		var StationarySprite = "5c78776837f153bb:LobsterSamusRightShootIdle_0"
+		var JumpNoise = "5c4454bb277821ae:MetroidJumpSound"
+	}
+	PlayerShooting 
+	{
+		var BulletArch = "5cc1b5fc09e986aa:PlayerBullet"
+		var FireButt = Keys.Space
+		var BullSpeed = 20
+		var PlayerShootingSound = "null"
+	}
+	Orientation 
+	{
+		var GlobalUp = Real3{0, 1, 0}
+		var LocalOrientationBasis = Quaternion{-0.5, 0.5, 0.5, -0.5}
+		var DefaultBases = OrientationBases.ForwardXUpZ
+	}
+	MorphBall 
+	{
+		var MorphBallArch = "5cc611fd5ff08f38:MorphBall"
+		var VertOffset = 0
+	}
+	PauseButton 
+	{
+		var PauseKey = Keys.Q
+	}
+	BasicDoor 
+	{
+		var NextLevel = "5c47b88e9523a907:Menu"
+	}
+	Hierarchy 
+	{
+	}
+}

@@ -1,0 +1,17 @@
+class BasicDoor : ZilchComponent
+{
+  [Property]
+  var NextLevel : Level = null;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Door" && this.NextLevel != null)
+    {
+      this.Space.LoadLevel(this.NextLevel);
+    }
+  }
+}

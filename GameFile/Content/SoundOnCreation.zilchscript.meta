@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "SoundOnCreation"
+		var ResourceId = 0x5cc5df0437ec3c4e
+	}
+}

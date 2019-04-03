@@ -1,0 +1,32 @@
+/***********
+Hunter Bradley
+10/3/18
+This allows the cammera to follow the player Object
+***********/
+
+class CammeraFollow : ZilchComponent
+{
+  //this is the target for the cammera to follow
+  [Property]
+  var Target : CogPath = null;
+  [Property]
+  var Lag : Real = 0.5;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //this will make sure the cog is set prperly so it doesn't crash
+    if(this.Target.Cog != null)
+    {
+      var newPos = this.Target.Cog.Transform.Translation;
+      //adjust the z value so the camera doesn't mess up
+      newPos.Z = this.Owner.Transform.Translation.Z;
+      this.Owner.Transform.Translation = Math.Lerp(this.Owner.Transform.Translation,
+        newPos, this.Lag);
+    }
+  }
+}

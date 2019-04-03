@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "SoundOnDeath"
+		var ResourceId = 0x5cc5dfb827066bf5
+	}
+}

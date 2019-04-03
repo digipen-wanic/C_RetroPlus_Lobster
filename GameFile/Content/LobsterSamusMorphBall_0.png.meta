@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "LobsterSamusMorphBall_0"
+		var ResourceId = 0x5c7875f7fa29b6ca
+		var FrameSizeX = 12
+		var FrameSizeY = 13
+		var FrameCount = 4
+		var FrameDelay = 0.0833333358
+		var OriginX = 6
+		var OriginY = 6.5
+		var PixelsPerUnit = 16
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
