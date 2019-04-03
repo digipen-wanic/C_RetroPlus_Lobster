@@ -48,6 +48,7 @@ Level
 			var RightKey = Keys.D
 			var LeftKey = Keys.A
 			var DownKey = Keys.S
+			var MaxJumps = 1
 		}
 	}
 	Cog [ContextId:2]
@@ -88,7 +89,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.51058674, -1.72711289, 20}
+			var Translation = Real3{7.59583664, -3.98877764, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -141,7 +142,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 18.0967293
+			var Size = 44.5107765
 		}
 		EditorCameraController 
 		{
@@ -150,7 +151,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{2.51058674, -1.72711289, -2.10961531e-07}
+			var LookTarget = Real3{7.59583664, -3.98877764, 3.97591492e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -302,6 +303,36 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5c7fd7095a090b40:ZoomerPath1"][ContextId:9]
+	{
+		var Name = "ZoomerPath1"
+		Transform 
+		{
+			var Translation = Real3{-8.5, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5c7fd710599c5342:ZoomerPath2"][ContextId:10]
+	{
+		var Name = "ZoomerPath2"
+		Transform 
+		{
+			var Translation = Real3{-1.5, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5c7fd73d52c7eede:ZoomerPath3"][ContextId:11]
+	{
+		var Name = "ZoomerPath3"
+		Transform 
+		{
+			var Translation = Real3{34.5, 11, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
