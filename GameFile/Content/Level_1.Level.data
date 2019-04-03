@@ -467,14 +467,6 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{4, 4, 1}
 		}
-		SimpleSplineFollower 
-		{
-			var SplineCogPath = CogPath
-			{
-				var Path = ":/ZoomerPath"
-				var Cog = 8
-			}
-		}
 	}
 	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:18]
 	{

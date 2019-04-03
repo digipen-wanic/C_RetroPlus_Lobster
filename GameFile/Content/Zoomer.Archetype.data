@@ -4,7 +4,7 @@ Cog
 	var Name = "ZoomerTest"
 	Transform 
 	{
-		var Translation = Real3{-3.5, -2.55999994, 0}
+		var Translation = Real3{-12.5, 7.5, 0}
 		var Scale = Real3{4, 4, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
