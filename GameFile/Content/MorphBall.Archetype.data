@@ -18,9 +18,9 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.819607913, 0.435294151, 0.188235313, 1}
+		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5c7875f7fa29b6ca:LobsterSamusMorphBall_0"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -34,7 +34,7 @@ Cog
 		var DynamicState = RigidBodyDynamicState.Dynamic
 		var AllowSleep = true
 		var Asleep = false
-		var RotationLocked = false
+		var RotationLocked = true
 		var Mode2D = Mode2DStates.InheritFromSpace
 	}
 	BoxCollider 
@@ -49,7 +49,7 @@ Cog
 	MorphBallMovement 
 	{
 		var PlayerArch = "5cc61202deaefc98:StandingSamus"
-		var RollSpeed = 1
+		var RollSpeed = 0.300000012
 		var VertOffset = 1
 	}
 }
