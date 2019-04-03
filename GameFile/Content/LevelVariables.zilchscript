@@ -1,7 +1,7 @@
 /************************************
 File Name : LevelVariables
 By: Andrew Yan
-Last Edited: 03/28/2019
+Last Edited: 04/02/2019
 Description: This script will handle all global variables for each level
 All content © 2019 DigiPen (USA) Corporation, all rights reserved
 ************************************/
@@ -31,4 +31,7 @@ class LevelVariables : ZilchComponent
   //The universal key for down
   [Property]
   var DownKey : Keys = Keys.S;
+  //The max number of jumps the player can have
+  [Property]
+  var MaxJumps : Integer = 1;
 }

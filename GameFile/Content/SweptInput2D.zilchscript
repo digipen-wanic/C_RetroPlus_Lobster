@@ -33,11 +33,14 @@ class SweptInput2D : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
-    //Set all the keys here
-    this.LeftKey = this.LevelSettings.LevelVariables.LeftKey;
-    this.RightKey = this.LevelSettings.LevelVariables.RightKey;
-    this.DownKey = this.LevelSettings.LevelVariables.DownKey;
-    this.JumpKey = this.LevelSettings.LevelVariables.JumpKey;
+    if(this.LevelSettings.LevelVariables != null)
+    {
+      //Set all the keys here
+      this.LeftKey = this.LevelSettings.LevelVariables.LeftKey;
+      this.RightKey = this.LevelSettings.LevelVariables.RightKey;
+      this.DownKey = this.LevelSettings.LevelVariables.DownKey;
+      this.JumpKey = this.LevelSettings.LevelVariables.JumpKey;
+    }
     
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
@@ -82,8 +85,8 @@ class SweptInput2D : ZilchComponent
       //Set running to false if there is no running input
       this.RunningBoolean = false;
     }
-    
-    if (Zero.Keyboard.KeyIsPressed(this.JumpKey))
+    //Check if the jump key is pressed and if the player can jump
+    if (Zero.Keyboard.KeyIsPressed(this.JumpKey) && this.SweptController.JumpBool)
     {
       //Safety check for sprite/animation
       if(this.JumpSprite != null)

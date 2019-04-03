@@ -1,5 +1,14 @@
 class ZoomerMovement : ZilchComponent
 {
+  [Dependency]
+  var SimpleSplineFollower : SimpleSplineFollower;
+  
+  [Property]
+  var MinRange : Real = 0.25;
+  
+  [Property]
+  var MaxRange : Real = 0.75;
+  
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
@@ -8,13 +17,42 @@ class ZoomerMovement : ZilchComponent
 
   function OnGroupCollisionStarted(event : CollisionGroupEvent)
   {
+    //This is used to see where the player is 
+    var xPos = Math.Abs(Math.FMod(this.Owner.Transform.Translation.X, 1.0));
+    
+    //This is used for debugging
+    Console.WriteLine("`xPos`");
+    
+    //Checks to see if it collided with the right object
     if(event.OtherObject.Collider.CollisionGroup.Name == "LeftEdge")
     {
-      Console.WriteLine("e");
+      //Checks to see if the owner is in the range
+      if(xPos <= this.MinRange || xPos >= this.MaxRange)
+      {
+        //If and else if statement to swap direction depending on what was the last state
+        if(this.SimpleSplineFollower.Direction == 1)
+        {
+          this.SimpleSplineFollower.Direction = -1;
+        }
+        else if(this.SimpleSplineFollower.Direction == -1)
+        {
+          this.SimpleSplineFollower.Direction = 1;
+        }
+      }
     }
   }
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    
+    //This is used for a bug where it would flip the owner if the direction was flipped
+    if(this.SimpleSplineFollower.Direction == 1)
+    {
+      this.Owner.Sprite.FlipX = false;
+    }
+    else if(this.SimpleSplineFollower.Direction == -1)
+    {
+      this.Owner.Sprite.FlipX = true;
+    }
   }
 }
