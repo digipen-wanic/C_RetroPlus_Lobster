@@ -6,10 +6,9 @@
 class SweptInput2D : ZilchComponent
 {
   [Dependency] var SweptController : SweptController;
-  
-  var LeftKey : Keys = Keys.A;
-  var RightKey : Keys = Keys.D;
-  var JumpKey : Keys = Keys.Space;
+  [Property] var LeftKey : Keys = Keys.A;
+  [Property] var RightKey : Keys = Keys.D;
+  [Property] var JumpKey : Keys = Keys.Space;
   
   /* Added */
   //The button to be pressed to turn into the morphball

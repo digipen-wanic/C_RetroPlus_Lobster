@@ -200,14 +200,17 @@ class SweptController : ZilchComponent
   //This is used to check every frame if the owner is grounded or not
   function OnLogicUpdate(event : UpdateEvent)
   {
-    //This is used to see if the owner can jump or not
-    if(this.JumpCount <= this.LevelSettings.LevelVariables.MaxJumps)
+    if(this.LevelSettings.LevelVariables != null)
     {
-      this.JumpBool = true;
-    }
-    else
-    {
-      this.JumpBool = false;
+      //This is used to see if the owner can jump or not
+      if(this.JumpCount <= this.LevelSettings.LevelVariables.MaxJumps)
+      {
+        this.JumpBool = true;
+      }
+      else
+      {
+        this.JumpBool = false;
+      }
     }
     
     //Resets jump counter if grounded

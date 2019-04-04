@@ -27,18 +27,8 @@ class MorphBall : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    //Checks to see if the player has the powerup, if the there is an archetype to spawn, and if the player is grounded
-    if(this.LevelSettings.LevelVariables.MorphBool && this.MorphBallArch != null && this.SweptController.Grounded)
+    if(this.LevelSettings.LevelVariables != null)
     {
-      //Checks to see if the down button was pressed
-     if(Zero.Keyboard.KeyIsDown(this.SweptInput2D.DownKey))
-     {
-        //Spawns the morph ball archetype with the offset 
-        this.Space.CreateAtPosition(this.MorphBallArch, Real3(this.Owner.Transform.Translation.X, this.VertOffset + this.Owner.Transform.Translation.Y, this.Owner.Transform.Translation.Z));
-        
-        //Destroys the owner afterwards
-        this.Owner.Destroy();
-      }
     }
   }
 }
