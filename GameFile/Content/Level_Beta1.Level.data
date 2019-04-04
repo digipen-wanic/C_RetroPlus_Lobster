@@ -44,7 +44,7 @@ Level
 			var PlayerBullet = 1
 			var MorphBool = false
 			var BallingBool = false
-			var JumpKey = Keys.W
+			var JumpKey = Keys.Space
 			var RightKey = Keys.D
 			var LeftKey = Keys.A
 			var DownKey = Keys.S
@@ -95,7 +95,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-19.3625107, -3.92426062, 20}
+			var Translation = Real3{12.6098318, 1.65078425, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -148,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 66.4021072
+			var Size = 22.1033592
 		}
 		EditorCameraController 
 		{
@@ -157,7 +157,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-19.3625107, -3.92426062, 4.51638783e-07}
+			var LookTarget = Real3{12.6098318, 1.65078425, -4.05646631e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -403,6 +403,28 @@ Level
 		Transform 
 		{
 			var Translation = Real3{46.5, -2.5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:15]
+	{
+		Transform 
+		{
+			var Translation = Real3{49.5, -2.5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+		Sprite 
+		{
+			var FlipX = false
+		}
+	}
+	Cog [InheritId:"5c7c7d0a7f70e517:Skree"][ContextId:16]
+	{
+		Transform 
+		{
+			var Translation = Real3{25.5, 4.5, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}

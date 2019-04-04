@@ -52,7 +52,7 @@ class LSkreeAi : ZilchComponent
     {
       if(rightPos <= newPlayerPos || leftPos >= newPlayerPos)
       {
-        //this.RidgedBody.DynamicState;
+        this.RidgedBody.DynamicState = RidgedBodyDynamicState.DynamicState;
         this.IsFalling == true;
         Console.WriteLine("Entered Zone.");
       }
