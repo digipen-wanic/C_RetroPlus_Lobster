@@ -4,7 +4,7 @@ Cog
 	var Name = "ZoomerTest"
 	Transform 
 	{
-		var Translation = Real3{-12.5, 7.5, 0}
+		var Translation = Real3{12.4703531, 1.77380705, 0}
 		var Scale = Real3{4, 4, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -39,7 +39,7 @@ Cog
 		var RotateOn = false
 		var SplineCogPath = CogPath
 		{
-			var Path = ":/ZoomerPath"
+			var Path = ":/ZoomerPath3"
 			var ErrorOnResolveToNull = false
 			var ErrorOnPathCantCompute = false
 			var ErrorOnDirectLinkFail = false
@@ -54,7 +54,7 @@ Cog
 		}
 		var Speed = 5
 		var LocalFollowPoint = Real3{0, 0, 0}
-		var LoopMode = SimpleLoopMode.Reverse
+		var LoopMode = SimpleLoopMode.Continue
 		var LocalFollow = false
 		var CurrentDistance = 0
 		var Direction = 1
@@ -75,11 +75,6 @@ Cog
 		var Offset = Real3{0, 0.0149999997, 0}
 		var HalfSize = Real3{0.125, 0.125, 0.5}
 	}
-	DeathOnTouch 
-	{
-		var NextLevel = "5c47b88e9523a907:Menu"
-		var Bullet = false
-	}
 	RigidBody 
 	{
 		var Velocity = Real3{0, 0, 0}
@@ -89,5 +84,15 @@ Cog
 		var Asleep = false
 		var RotationLocked = true
 		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	Health 
+	{
+		var MaxHealth = 2
+		var DestroyAtZero = true
+		var DamageSoundCue = "null"
+	}
+	DamageOnCollide 
+	{
+		var Damage = 8
 	}
 }

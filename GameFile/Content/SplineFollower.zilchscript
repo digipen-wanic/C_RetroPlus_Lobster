@@ -177,7 +177,7 @@ class SimpleSplineFollower : ZilchComponent
   
   function UpdateOrientation(forward : Real3)
   {
-    var currForward = Math.Slerp(this.OldForward, forward, 1);
+    var currForward = Math.Slerp(this.OldForward, forward, 0);
     this.Orientation.LookAtDirectionWithUp(currForward, this.Orientation.WorldUp);
     this.OldForward = currForward;
   }

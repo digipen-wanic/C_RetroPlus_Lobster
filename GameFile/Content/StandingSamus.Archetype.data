@@ -56,7 +56,7 @@ Cog
 		var JumpCancelFactor = 0.5
 		var MaxMoveSpeed = 10
 		var MaxFallSpeed = 50
-		var GroundAcceleration = 50
+		var GroundAcceleration = 25
 		var AirAcceleration = 10
 		var GroundDeceleration = 50
 		var AirDeceleration = 10
@@ -71,6 +71,9 @@ Cog
 	}
 	SweptInput2D 
 	{
+		var LeftKey = Keys.A
+		var RightKey = Keys.D
+		var JumpKey = Keys.Space
 		var JumpSprite = "5c7875b6ef2365bb:LobsterSamusTransitionRoll_0"
 		var RunningAnimation = "5c44553a94e32b46:LobsterSamusWalkRight_0"
 		var StationarySprite = "5c78776837f153bb:LobsterSamusRightShootIdle_0"
@@ -101,6 +104,12 @@ Cog
 	BasicDoor 
 	{
 		var NextLevel = "5c47b88e9523a907:Menu"
+	}
+	Health 
+	{
+		var MaxHealth = 30
+		var DestroyAtZero = true
+		var DamageSoundCue = "null"
 	}
 	Hierarchy 
 	{

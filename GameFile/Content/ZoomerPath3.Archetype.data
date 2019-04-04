@@ -2,6 +2,11 @@
 Cog 
 {
 	var Name = "ZoomerPath3"
+	EditorFlags 
+	{
+		var Locked = false
+		var Hidden = true
+	}
 	Transform 
 	{
 		var Translation = Real3{34.5, 11, 0}
@@ -14,1623 +19,782 @@ Cog
 		var SplineType = SplineType.Linear
 		var Error = 0.00999999978
 		var DebugDrawSpline = true
-		var SplineColor = Real4{1, 1, 1, 1}
+		var SplineColor = Real4{1, 0, 0, 1}
 	}
 	Hierarchy 
 	{
-		Cog [Id:0x5c44540dc23d5621]
+		Cog [Id:0x5c7faa71af333210][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-53, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c44540dc23d5648]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-53, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c44548b298d9b6b]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-40, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c445489280e6d1e]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-40, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c44549728b1d864]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-29, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c44549528c499ea]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-29, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c4454932f4d05b6]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{10, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c44549e2fc7e0b0]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{10, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa8523c7f8cdb]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{7, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9ed2994ecf3]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{7, -14.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9e92879cdae]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{12, -14.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f628a97dd9]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{12, -12.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f728f6cb5e]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{11, -12.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f428c0dd6b]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{11, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f52f17844a]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{6, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f22f67d96f]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{6, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f32f5bdab0]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{4, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f02f96b833]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{4, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9f12fedd475]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{3, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9fe2e38b0dd]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{3, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9ff2e732d60]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{1, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa9fc2e4892dd]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{1, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa96bc24558ab]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-4, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa968c2841dd0]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-4, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa968c282eda6]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-7, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa974c141928e]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-7, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa975c193a036]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-8, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa972c1de95ec]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-8, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa901fe6c25fc]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-11, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa90ffe8db0ea]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-11, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa90dfd3f10ce]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-12, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa90afd7ae110]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-12, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa908fda808a6]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-13, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa909fdfea45c]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-13, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa916fc3d62db]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-14, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa917fc0db5a9]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-14, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa914fc5a43d4]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-19, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa915fc9450f5]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-19, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa912fcea3dbf]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-25, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fa913f323e3ae]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-25, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6faf83bf8d0]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-27, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6128e2f261f]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-27, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6dde7acef35]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-31, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6bded17af1b]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-31, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6b1ee5376b2]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-34, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6b2ef8f5225]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-34, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6b6ef220aff]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-39, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6aee967c256]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-39, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6a2eaa5a70a]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-40, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd698eb4850eb]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-40, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd69c94aed4f9]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-40, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd68e972cdc88]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-42, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd67b92fc2139]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-42, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd670934959bd]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-45, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6759cda0140]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-45, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6699c1fd222]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-46, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd66c9d1d157e]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-46, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6639e2f77e1]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-49, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6679f667941]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-49, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6579a250f6d]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-55, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd64d84e92417]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-55, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd63681973454]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-56, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd63b86228f29]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-56, -3.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd6108e41d6bb]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-56, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd61e8efcf282]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-57, -4.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd61c8d10aea1]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-57, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7e1b73c1840]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-59, -5.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7eeb7098425]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-59, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7efb74613e2]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-60, -6.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7ecb7aa29e5]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-60, -7.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7edb7ea9a79]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-61, -7.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7eab63193bd]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-61, -8.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7ebb60994b8]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-62, -8.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7e8b6455392]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-62, -14.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7e9b691f6c3]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-61, -14.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7f6b6e24db1]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-61, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c7bf46b814]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-60, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c7bfae8a7b]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-60, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c4bfe1e4d5]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-58, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c5be344d4e]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-58, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c2be1bc0ff]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-57, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7c3be5412a1]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-57, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7b5bafdfe63]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-55, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd7a2a5872fa2]
-		{
-			var Name = "Transform"
-			Transform 
-			{
-				var Translation = Real3{-55, -18.5, 0}
-				var Scale = Real3{1, 1, 1}
-				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
-			}
-		}
-		Cog [Id:0x5c7fd796a1d14888]
-		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{-55, -17.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
 			}
-			SelectionIcon 
+		}
+		Cog [Id:0x5c7faa85ad4e6f82][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
 			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Translation = Real3{-53, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa86aee4074d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-53, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa7bae165053][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-40, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa7cafac33bd][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-40, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa72a84e764d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-29, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fa6bdd84e5b7d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-29, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa77a9f29d61][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{10, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa6daa90b724][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{10, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa6eabc5dcfe][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{7, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa62ab0b1df0][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{7, -14.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa5b55dee34f][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{12, -14.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa56571d3dfc][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{12, -12.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa81ac1a4904][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{11, -12.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faa97a226696e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{11, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faab5a4e69c2e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{6, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac04f9578e8f][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{6, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac00f87f8d41][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{4, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac80c7adecb4][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{4, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac8cc657852f][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{3, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac8bc52fda2b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{3, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac96c583eaea][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{1, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac95c47ad7f0][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{1, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac91c4c13f62][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-4, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac9ddbf92320][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-4, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac98da4d52a5][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-7, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faca4d90642e0][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-7, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faca1d828916e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-8, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facaddf3450f8][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-8, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faca9dffe4495][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-11, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facb5dea42b4c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-11, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facb0dd768e0b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-12, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facbcddc4e328][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-12, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facb8dc82db16][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-13, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facc7d3674558][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-13, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facc2d3d96c49][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-14, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facc1d2afd50c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-14, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facd4d095ac00][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-19, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facd0d7a941a5][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-19, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facdfd61dd902][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-25, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facdad6fd270b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-25, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facd9d553d830][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-27, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7face5d4271ab7][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-27, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7face0d483c7fd][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-31, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facef2b549618][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-31, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faceb2a2c1228][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-34, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facf62a8f0910][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-34, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facf32996b79d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-39, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facfe2870ea12][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-39, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7facfb2f0353a4][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-40, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf042e1f6fcf][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-40, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf032efda359][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-40, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf0e2d5f8a1e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-42, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf0d2c3ea66d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-42, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf082c87094d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-45, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf172373364c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-45, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf1223d1bc7a][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-46, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf1e22a4d7ff][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-46, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf1c212efbd2][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-49, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf1b21822d6e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-49, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf2720b6a096][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-55, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf21279d1960][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-55, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf2227233e0b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-56, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf2c260aa418][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-56, -3.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf2b26ea3d61][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-56, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf3725b8e660][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-57, -4.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac52c9f0caef][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-57, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac51c86dd21c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-59, -5.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac5dcf37f77c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-59, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac58cf8390b0][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-60, -6.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac64ce41459a][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-60, -7.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac6ccc368b4d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-61, -7.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac48caa180be][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-61, -8.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac40f4d91dec][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-62, -8.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac47f432106b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-62, -14.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac38f5611baa][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-61, -14.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac3cf6a5ac65][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-61, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac30f78dd796][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-60, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac35f711d82c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-60, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac29f05f9a2a][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-58, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac2af1e97a06][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-58, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac2ff10fb4bc][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-57, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac11fdbea4ea][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-57, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac1cfc19240c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-55, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac1bfcf23fb4][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-55, -18.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7fac27f3957540][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{-55, -17.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
 			}
 		}
 	}

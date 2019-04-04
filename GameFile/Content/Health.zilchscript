@@ -10,6 +10,9 @@ class Health : ZilchComponent
   var CurrentHealth:Integer = 30;
   [Property]
   var DestroyAtZero:Boolean = true;  
+  [Property]
+  var DamageSoundCue : SoundCue = null;
+  
   function Initialize(init : CogInitializer)
   {
     this.CurrentHealth = this.MaxHealth;
@@ -19,11 +22,15 @@ class Health : ZilchComponent
   function TakeDamage( damage: Integer)
   {
     this.CurrentHealth -= damage;
+    if(this.DamageSoundCue != null)
+    {
+      this.Space.SoundSpace.PlayCue(this.DamageSoundCue);
+    }
     if(this.DestroyAtZero && this.CurrentHealth <= 0)
     {
       this.Owner.Destroy();
     }
-    if(this.CurrentHealth>= this.MaxHealth)
+    if(this.CurrentHealth >= this.MaxHealth)
     {
       this.CurrentHealth = this.MaxHealth;
     }
