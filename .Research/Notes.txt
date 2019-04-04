@@ -7,7 +7,12 @@ Damage
 HP cap is 99
 You can't spin jump and then aim up. You can only aim to the side.
 
+All enemies:
+Change directions if the camera is perfectly aligned with a block and they go off/ hit the edge of the screen
+
 Enemy: Scree
 They can travel a maximum of 4 blocks on the x-axis
 It takes 65 frames for the scree to travel 13 frames, 5 frames to travel the distance of one block.
-The scree only moves once every other frame
+The scree moves one pixel every other frame
+
+Samus turns to face the camera for one frame when you rurn from left to right or right to left
