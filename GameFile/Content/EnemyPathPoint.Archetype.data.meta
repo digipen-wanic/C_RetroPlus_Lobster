@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "EnemyPathPoint"
+		var ResourceId = 0x5c7faa56571db9dd
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

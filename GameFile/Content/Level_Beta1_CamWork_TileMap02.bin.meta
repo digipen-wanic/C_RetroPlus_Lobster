@@ -1,0 +1,13 @@
+[Version:1]
+BinaryContent 
+{
+	BinaryBuilder 
+	{
+		var Name = "Level_Beta1_CamWork_TileMap02"
+		var ResourceId = 0x5c7fad69858ec9c8
+		var LoaderType = "TileMapSource"
+		var Version = 0
+		var FilterTag = ""
+		var ResourceOwner = "5c7fddd69c5484c5:Level_Beta1_CamWork"
+	}
+}
