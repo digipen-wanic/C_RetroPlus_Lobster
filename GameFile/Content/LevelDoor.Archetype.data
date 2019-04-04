@@ -4,7 +4,7 @@ Cog
 	var Name = "Door"
 	Transform 
 	{
-		var Translation = Real3{9, 2, 0}
+		var Translation = Real3{46.5, -2.52024555, 1}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -20,8 +20,8 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
-		var FlipX = false
+		var SpriteSource = "5c7fa12c59ebdd7e:Doorbubble000"
+		var FlipX = true
 		var FlipY = false
 		var AnimationActive = true
 		var AnimationSpeed = 1

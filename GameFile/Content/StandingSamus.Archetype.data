@@ -56,7 +56,7 @@ Cog
 		var JumpCancelFactor = 0.5
 		var MaxMoveSpeed = 10
 		var MaxFallSpeed = 50
-		var GroundAcceleration = 50
+		var GroundAcceleration = 25
 		var AirAcceleration = 10
 		var GroundDeceleration = 50
 		var AirDeceleration = 10

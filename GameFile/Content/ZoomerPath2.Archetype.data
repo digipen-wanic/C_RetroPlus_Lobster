@@ -2,6 +2,11 @@
 Cog 
 {
 	var Name = "ZoomerPath2"
+	EditorFlags 
+	{
+		var Locked = false
+		var Hidden = true
+	}
 	Transform 
 	{
 		var Translation = Real3{-1.5, 11, 0}
@@ -14,160 +19,80 @@ Cog
 		var SplineType = SplineType.Linear
 		var Error = 0.00999999978
 		var DebugDrawSpline = true
-		var SplineColor = Real4{1, 1, 1, 1}
+		var SplineColor = Real4{0.0799999237, 0, 1, 1}
 	}
 	Hierarchy 
 	{
-		Cog [Id:0x5c44540dc23d5621]
+		Cog [Id:0x5c7faf483f5c6631][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{5, -7.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c44540dc23d5648]
+		Cog [Id:0x5c7faf543e2c2a7d][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{5, -9.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c44548b298d9b6b]
+		Cog [Id:0x5c7faf503d31a355][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{4, -9.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c445489280e6d1e]
+		Cog [Id:0x5c7faf5b3c70f54c][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{4, -11.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c44549728b1d864]
+		Cog [Id:0x5c7faf5c3d921de3][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{3, -11.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c44549528c499ea]
+		Cog [Id:0x5c7faf663cd18375][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{3, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c4454932f4d05b6]
+		Cog [Id:0x5c7faf6533b44d1e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{7, -16.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
-		Cog [Id:0x5c44549e2fc7e0b0]
+		Cog [Id:0x5c7faf603238791e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
 		{
-			var Name = "Transform"
 			Transform 
 			{
 				var Translation = Real3{7, -7.5, 0}
-				var Scale = Real3{1, 1, 1}
 				var Rotation = Quaternion{0, 0, 0, 1}
-			}
-			SelectionIcon 
-			{
-				var Visible = true
-				var VisibilityEvents = true
-				var Material = "56581e2bb81777be:DebugDrawOnTop"
-				var SpriteSource = "58f8e4be736fa133:SelectIcon"
-				var ViewScale = 1
-				var OverrideSelections = true
+				var Scale = Real3{1, 1, 1}
 			}
 		}
 	}
