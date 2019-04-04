@@ -21,6 +21,7 @@ class CamFollow : ZilchComponent
       //change cam pos
       var newPos = this.Target.Cog.Transform.Translation;
       newPos.Z = this.Owner.Transform.Translation.Z;
+      newPos.Y = this.Owner.Transform.Translation.Y;
       this.Owner.Transform.Translation = Math.Lerp(this.Owner.Transform.Translation,newPos, this.Lag);
     }
   }

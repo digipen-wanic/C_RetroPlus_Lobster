@@ -48,6 +48,8 @@ Level
 			var RightKey = Keys.D
 			var LeftKey = Keys.A
 			var DownKey = Keys.S
+			var UpKey = Keys.W
+			var ShootKey = Keys.Shift
 			var MaxJumps = 1
 		}
 		HUDCreator 
@@ -93,7 +95,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-0.678234577, -4.68829966, 20.0000019}
+			var Translation = Real3{-19.3625107, -3.92426062, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +148,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9970989
+			var Size = 66.4021072
 		}
 		EditorCameraController 
 		{
@@ -155,7 +157,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-0.678234577, -4.68829966, 1.26835459e-06}
+			var LookTarget = Real3{-19.3625107, -3.92426062, 4.51638783e-07}
 			var MoveSensitivity = 1
 		}
 	}
