@@ -54,7 +54,7 @@ class LSkreeAi : ZilchComponent
       {
         this.RidgedBody.DynamicState = RidgedBodyDynamicState.DynamicState;
         this.IsFalling == true;
-        Console.WriteLine("Entered Zone.");
+        //Console.WriteLine("Entered Zone.");
       }
     }
     else
@@ -63,7 +63,7 @@ class LSkreeAi : ZilchComponent
       {
         this.RidgedBody.DynamicState;
         this.IsFalling == false;
-        Console.WriteLine("Exited Zone");
+        //Console.WriteLine("Exited Zone");
       }
     }
     

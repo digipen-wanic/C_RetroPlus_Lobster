@@ -4,7 +4,7 @@ Cog
 	var Name = "StandingSamus"
 	Transform 
 	{
-		var Translation = Real3{-7, 9.25, 1}
+		var Translation = Real3{-7, -5, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -71,17 +71,21 @@ Cog
 	}
 	SweptInput2D 
 	{
-		var JumpSprite = "5c7875b6ef2365bb:LobsterSamusTransitionRoll_0"
-		var RunningAnimation = "5c44553a94e32b46:LobsterSamusWalkRight_0"
-		var StationarySprite = "5c78776837f153bb:LobsterSamusRightShootIdle_0"
+		var NormalRunning = "5c44553a94e32b46:LobsterSamusWalkRight_0"
+		var ForwardRunning = "5c445e6fe1888e3a:LobsterPipeTile000"
+		var UpRunning = "58f8e4be736f5ea2:LightIcon"
+		var ForwardStand = "58f8e4be7360cf7c:CameraIcon"
+		var UpStand = "5c7875f7fa29b6ca:LobsterSamusMorphBall_0"
+		var JumpForward = "58f8e4be736f19fe:ConnectionIcon"
+		var JumpUp = "5cc5da7ed8c89079:EngineSpriteSheet"
+		var JumpSpin = "5c445e97f9a4388d:LobsterGrateTile000"
+		var JumpNormal = "5c478348820c4494:LobsterZoomer"
 		var JumpNoise = "5c4454bb277821ae:MetroidJumpSound"
 	}
 	PlayerShooting 
 	{
 		var BulletArch = "5cc1b5fc09e986aa:PlayerBullet"
-		var FireButt = Keys.Space
 		var BullSpeed = 20
-		var PlayerShootingSound = "null"
 	}
 	Orientation 
 	{

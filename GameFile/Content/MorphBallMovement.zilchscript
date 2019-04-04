@@ -50,7 +50,7 @@ class MorphBallMovement : ZilchComponent
     }
     
     //Checks to see if the player is trying to jump and that there is an object to spawn
-    if(Zero.Keyboard.KeyIsDown(jumpKey) && this.PlayerArch != null)
+    if((Zero.Keyboard.KeyIsDown(jumpKey) || Zero.Keyboard.KeyIsDown(this.LevelSettings.LevelVariables.UpKey))&& this.PlayerArch != null)
     {
       //Spawns the player with the offset
       this.Space.CreateAtPosition(this.PlayerArch, Real3(this.Owner.Transform.Translation.X, this.VertOffset + this.Owner.Transform.Translation.Y, this.Owner.Transform.Translation.Z));
