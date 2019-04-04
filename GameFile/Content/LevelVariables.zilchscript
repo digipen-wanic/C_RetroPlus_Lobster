@@ -1,7 +1,7 @@
 /************************************
 File Name : LevelVariables
 By: Andrew Yan
-Last Edited: 04/02/2019
+Last Edited: 04/03/2019
 Description: This script will handle all global variables for each level
 All content © 2019 DigiPen (USA) Corporation, all rights reserved
 ************************************/
@@ -19,9 +19,9 @@ class LevelVariables : ZilchComponent
   //This boolean helps keep track if the palyer is in the morphball or not
   [Property]
   var BallingBool : Boolean = false;
-  //The universal key for up
+  //The universal key for jumpinh
   [Property]
-  var JumpKey : Keys = Keys.W;
+  var JumpKey : Keys = Keys.Space;
   //The universal key for right
   [Property]
   var RightKey : Keys = Keys.D;
@@ -31,6 +31,12 @@ class LevelVariables : ZilchComponent
   //The universal key for down
   [Property]
   var DownKey : Keys = Keys.S;
+  //The universal key for aiming up
+  [Property]
+  var UpKey : Keys = Keys.W;
+  //The button to bbe pressed for the player to fire
+  [Property]
+  var ShootKey : Keys = Keys.Shift;
   //The max number of jumps the player can have
   [Property]
   var MaxJumps : Integer = 1;
