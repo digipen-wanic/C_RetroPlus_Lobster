@@ -1,0 +1,94 @@
+[Version:1]
+Cog 
+{
+	var Name = "ZoomerPath1"
+	Transform 
+	{
+		var Translation = Real3{-8.5, 11, 0}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{0, 0, 0, 1}
+	}
+	HierarchySpline 
+	{
+		var Closed = true
+		var SplineType = SplineType.Linear
+		var Error = 0.00999999978
+		var DebugDrawSpline = true
+		var SplineColor = Real4{1, 0.990000129, 0, 1}
+	}
+	Hierarchy 
+	{
+		Cog [Id:0x5c7faf86356d816e][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{3, -7.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf8235cd36a1][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{3, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf8034bdb365][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{7, -16.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf8c0b1d7a87][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{7, -11.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf8b0bf8ad4b][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{6, -11.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf960a5d2504][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{6, -9.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf950914a9b0][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{5, -9.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+		Cog [Id:0x5c7faf9109fa2023][InheritId:"5c7faa56571db9dd:EnemyPathPoint"]
+		{
+			Transform 
+			{
+				var Translation = Real3{5, -7.5, 0}
+				var Rotation = Quaternion{0, 0, 0, 1}
+				var Scale = Real3{1, 1, 1}
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+/*******************************************
+Xander Panasky
+04/02/19
+breif: The player health being drained 
+*******************************************/
+class Health : ZilchComponent
+{
+  [Property]
+  var MaxHealth:Integer = 30;
+  var CurrentHealth:Integer = 30;
+  [Property]
+  var DestroyAtZero:Boolean = true;  
+  [Property]
+  var DamageSoundCue : SoundCue = null;
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.CurrentHealth = this.MaxHealth;
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+  
+  function TakeDamage( damage: Integer)
+  {
+    this.CurrentHealth -= damage;
+    if(this.DamageSoundCue != null)
+    {
+      this.Space.SoundSpace.PlayCue(this.DamageSoundCue);
+    }
+    if(this.DestroyAtZero && this.CurrentHealth <= 0)
+    {
+      this.Owner.Destroy();
+    }
+    if(this.CurrentHealth >= this.MaxHealth)
+    {
+      this.CurrentHealth = this.MaxHealth;
+    }
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+  }
+}

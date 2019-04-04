@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ZoomerPath1"
+		var ResourceId = 0x5c7fd7095a090b40
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

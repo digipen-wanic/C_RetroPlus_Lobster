@@ -68,9 +68,8 @@ Cog
 	PlayerBullet 
 	{
 	}
-	DeathOnTouch 
+	DamageOnCollide 
 	{
-		var NextLevel = "59097123da28242a:Level"
-		var Bullet = true
+		var Damage = 1
 	}
 }
