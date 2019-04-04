@@ -93,7 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.56629109, -2.39897108, 20.0000019}
+			var Translation = Real3{-0.678234577, -4.68829966, 20.0000019}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 24.4279938
+			var Size = 26.9970989
 		}
 		EditorCameraController 
 		{
@@ -155,7 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{2.56629109, -2.39897108, 1.0382787e-06}
+			var LookTarget = Real3{-0.678234577, -4.68829966, 1.26835459e-06}
 			var MoveSensitivity = 1
 		}
 	}
@@ -233,8 +233,46 @@ Level
 			var Active = true
 			var AttenuationScale = 1
 		}
+		CammeraFollow 
+		{
+			var Target = CogPath
+			{
+				var Path = ""
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 4294967293
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Lag = 0.5
+		}
+		CamFollow 
+		{
+			var Target = CogPath
+			{
+				var Path = ":/StandingSamus"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 5
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Lag = 0.5
+		}
 	}
-	Cog [ContextId:5]
+	Cog [ContextId:6]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -265,7 +303,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [InheritId:"5c7848739dae3226:PowerUp"][ContextId:6]
+	Cog [InheritId:"5c7848739dae3226:PowerUp"][ContextId:7]
 	{
 		Transform 
 		{
@@ -274,19 +312,13 @@ Level
 			var Scale = Real3{0.5, 0.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc61202deaefc98:StandingSamus"][ContextId:7]
+	Cog [InheritId:"5cc61202deaefc98:StandingSamus"][ContextId:5]
 	{
 		Transform 
 		{
 			var Translation = Real3{0, -6, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
-		}
-		Health [LocallyAdded]
-		{
-			var MaxHealth = 30
-			var DestroyAtZero = true
-			var DamageSoundCue = "null"
 		}
 	}
 	Cog [InheritId:"5c7fd7095a090b40:ZoomerPath1"][ContextId:8]
@@ -347,6 +379,11 @@ Level
 		}
 		SimpleSplineFollower 
 		{
+			var SplineCogPath = CogPath
+			{
+				var Path = ":/ZoomerPath2"
+				var Cog = 9
+			}
 			var LoopMode = SimpleLoopMode.Continue
 		}
 	}
@@ -358,53 +395,8 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{4, 4, 1}
 		}
-		SimpleSplineFollower 
-		{
-			var SplineCogPath = CogPath
-			{
-				var Path = ":/ZoomerPath3"
-				var Cog = 10
-			}
-			var LoopMode = SimpleLoopMode.Continue
-		}
 	}
-	Cog [InheritId:"5c4454f33c6e8a0a:Zoomer"][ContextId:14]
-	{
-		Transform 
-		{
-			var Translation = Real3{13.4703531, 1.77380705, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{4, 4, 1}
-		}
-		SimpleSplineFollower 
-		{
-			var SplineCogPath = CogPath
-			{
-				var Path = ":/ZoomerPath3"
-				var Cog = 10
-			}
-			var LoopMode = SimpleLoopMode.Continue
-		}
-	}
-	Cog [InheritId:"5c4454f33c6e8a0a:Zoomer"][ContextId:15]
-	{
-		Transform 
-		{
-			var Translation = Real3{14.4703531, 1.77380705, 0}
-			var Rotation = Quaternion{0, 0, 0, 1}
-			var Scale = Real3{4, 4, 1}
-		}
-		SimpleSplineFollower 
-		{
-			var SplineCogPath = CogPath
-			{
-				var Path = ":/ZoomerPath3"
-				var Cog = 10
-			}
-			var LoopMode = SimpleLoopMode.Continue
-		}
-	}
-	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:16]
+	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:14]
 	{
 		Transform 
 		{
