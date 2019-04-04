@@ -17,7 +17,6 @@ class PlayerShooting : ZilchComponent
   [Property]
   var BulletArch : Archetype = null;
   //Button to be pressed to shoot
-  [Property]
   var FireButt : Keys = Keys.Space;
   //The speed of the bullet
   [Property]
@@ -32,6 +31,7 @@ class PlayerShooting : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
+    this.FireButt = this.LevelSettings.LevelVariables.ShootKey;
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 
