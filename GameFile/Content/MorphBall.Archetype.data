@@ -48,8 +48,8 @@ Cog
 	}
 	MorphBallMovement 
 	{
-		var PlayerArch = "5cc61202deaefc98:StandingSamus"
-		var RollSpeed = 0.300000012
+		var PlayerArch = "5cfecd1b72f9526a:Samus"
+		var RollSpeed = 1
 		var VertOffset = 1
 	}
 }

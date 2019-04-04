@@ -1,11 +1,11 @@
 [Version:1]
 Cog 
 {
-	var Name = "Sprite"
+	var Name = "SkreeTest"
 	Transform 
 	{
-		var Translation = Real3{0, 0, 0}
-		var Scale = Real3{0.25, 0.25, 1}
+		var Translation = Real3{1.5, 5.25, 0}
+		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5275aa4d802dd6dc:Square"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -31,8 +31,8 @@ Cog
 	{
 		var Velocity = Real3{0, 0, 0}
 		var AngularVelocity = Real3{0, 0, 0}
-		var DynamicState = RigidBodyDynamicState.Dynamic
-		var AllowSleep = true
+		var DynamicState = RigidBodyDynamicState.Static
+		var AllowSleep = false
 		var Asleep = false
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
@@ -42,35 +42,31 @@ Cog
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "5cc7679b31211f54:PlayerBullet"
+		var CollisionGroup = "4e740859314e5515:DefaultGroup"
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
-	TimedDeath 
+	LSkreeAi 
 	{
-		var TimeTilDeath = 0.5
-	}
-	IgnoreSpaceEffects 
-	{
-		var IgnoreDrag = true
-		var IgnoreFlow = true
-		var IgnoreForce = true
-		var IgnoreGravity = true
-		var IgnorePointForce = true
-		var IgnorePointGravity = true
-		var IgnoreThrust = true
-		var IgnoreVortex = true
-		var IgnoreWind = true
-		var IgnoreTorque = true
-		var IgnoreBuoyancy = true
-		var IgnoreCustom = true
-	}
-	PlayerBullet 
-	{
-	}
-	DeathOnTouch 
-	{
-		var NextLevel = "59097123da28242a:Level"
-		var Bullet = true
+		var ZoneSize = 3
+		var PlayerCog = CogPath
+		{
+			var Path = ":/StandingSamus"
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var Cog = 4294967293
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
+		var Health = 0
+		var Speed = 0
+		var Damage = 0
+		var Energy = 0
 	}
 }

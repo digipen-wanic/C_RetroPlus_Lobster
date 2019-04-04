@@ -44,10 +44,13 @@ Level
 			var PlayerBullet = 1
 			var MorphBool = false
 			var BallingBool = false
-			var JumpKey = Keys.W
+			var JumpKey = Keys.Space
 			var RightKey = Keys.D
 			var LeftKey = Keys.A
 			var DownKey = Keys.S
+			var UpKey = Keys.W
+			var ShootKey = Keys.Shift
+			var MaxJumps = 1
 		}
 	}
 	Cog [ContextId:2]
@@ -88,7 +91,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0.341778576, -0.144138768, 30}
+			var Translation = Real3{-1.9118638, -4.29248524, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -141,7 +144,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 14.8163586
+			var Size = 10.9762316
 		}
 		EditorCameraController 
 		{
@@ -150,7 +153,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0.341778576, -0.144138768, 10}
+			var LookTarget = Real3{-1.9118638, -4.29248524, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -2708,7 +2711,7 @@ Level
 			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
 	}
-	Cog [InheritId:"5cc61202deaefc98:StandingSamus"][ContextId:77]
+	Cog [InheritId:"5cfecd1b72f9526a:Samus"][ContextId:77]
 	{
 		Transform 
 		{
@@ -2719,10 +2722,10 @@ Level
 	}
 	Cog [ContextId:78]
 	{
-		var Name = "SkreeTest"
+		var Name = "Sprite"
 		Transform 
 		{
-			var Translation = Real3{1.5, 5.25, 0}
+			var Translation = Real3{-1.85224593, -2.76635408, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -2738,7 +2741,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -2749,79 +2752,7 @@ Level
 		{
 			var Velocity = Real3{0, 0, 0}
 			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Static
-			var AllowSleep = false
-			var Asleep = false
-			var RotationLocked = false
-			var Mode2D = Mode2DStates.InheritFromSpace
-		}
-		BoxCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
-		}
-		LSkreeAi 
-		{
-			var ZoneSize = 3
-			var IsFalling = false
-			var PlayerCog = CogPath
-			{
-				var Path = ":/StandingSamus"
-				var ErrorOnResolveToNull = false
-				var ErrorOnPathCantCompute = false
-				var ErrorOnDirectLinkFail = false
-				var UpdateCogOnPathChange = true
-				var UpdatePathOnCogChange = true
-				var UpdateCogOnInitialize = true
-				var ResolvedNullErrorOccurred = false
-				var Cog = 77
-				var PathPreference0 = CogPathPreference.CogRelative
-				var PathPreference1 = CogPathPreference.SpaceRelative
-				var PathPreference2 = CogPathPreference.Absolute
-			}
-			var Health = 0
-			var Speed = 0
-			var Damage = 0
-			var Energy = 0
-		}
-	}
-	Cog [ContextId:79]
-	{
-		var Name = "SkreeFallTest"
-		Transform 
-		{
-			var Translation = Real3{-1.5, 5.25, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 0, 0, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		RigidBody 
-		{
-			var Velocity = Real3{0, 0, 0}
-			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Static
+			var DynamicState = RigidBodyDynamicState.Dynamic
 			var AllowSleep = true
 			var Asleep = false
 			var RotationLocked = false
@@ -2832,57 +2763,13 @@ Level
 			var Ghost = false
 			var SendsEvents = true
 			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var CollisionGroup = "5cc62bbdbff4043b:PowerUp"
 			var Offset = Real3{0, 0, 0}
 			var HalfSize = Real3{0.5, 0.5, 0.5}
 		}
-	}
-	Cog [ContextId:80]
-	{
-		var Name = "SkreeFallTest"
-		Transform 
+		PowerUp 
 		{
-			var Translation = Real3{4.5, 5.25, 0}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		Sprite 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 0, 0, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
-			var FlipX = false
-			var FlipY = false
-			var AnimationActive = true
-			var AnimationSpeed = 1
-			var StartFrame = 0
-		}
-		RigidBody 
-		{
-			var Velocity = Real3{0, 0, 0}
-			var AngularVelocity = Real3{0, 0, 0}
-			var DynamicState = RigidBodyDynamicState.Static
-			var AllowSleep = true
-			var Asleep = false
-			var RotationLocked = false
-			var Mode2D = Mode2DStates.InheritFromSpace
-		}
-		BoxCollider 
-		{
-			var Ghost = false
-			var SendsEvents = true
-			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-			var CollisionGroup = "4e740859314e5515:DefaultGroup"
-			var Offset = Real3{0, 0, 0}
-			var HalfSize = Real3{0.5, 0.5, 0.5}
+			var MorphBall = true
 		}
 	}
 }

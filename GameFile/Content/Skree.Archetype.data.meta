@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Skree"
+		var ResourceId = 0x5cfecd0776a7d723
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}
