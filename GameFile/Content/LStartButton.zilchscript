@@ -1,7 +1,8 @@
 /**************************************
 LStartButton.ziltchscript
 Last Edited By: Hunter Bradley
-Last Edit Date: 3/28/19
+Edited By: Andrew Yan
+Last Edit Date: 4/04/19
 Creation Date: 3/28/19
 A Button, that when pressed, swaps to a different level.
 Use for the Start Menu to lead into level 1.
@@ -9,9 +10,8 @@ Use for the Start Menu to lead into level 1.
 
 class LStartButton : ZilchComponent
 {
-  //Reactive Dependency
-  [Dependency]
-  var Reactive : Reactive = null;
+  [Property]
+  var ButtToNextLevel : Keys = Keys.Shift;
   //The Level the button will switch to when Pressed.
   [Property]
   var NextLevel : Level = null;
@@ -20,31 +20,16 @@ class LStartButton : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
-    Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
-    Zero.Connect(this.Owner, Events.LeftMouseDown, this.OnLeftMouseDown);
-    Zero.Connect(this.Owner, Events.LeftMouseUp, this.OnLeftMouseUp);
+    Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
   }
 
-  function OnMouseExit(event : ViewportMouseEvent)
-  {
-    //If cursor is outside of button area, cancel button click
-    this.ClickedDown = false;
-  }
-
-  function OnLeftMouseDown(event : ViewportMouseEvent)
-  {
-    //If Cursor Clicks Down inside of the button area, Change ClickedDown to true
-    this.ClickedDown = true;
-  }
-
-  function OnLeftMouseUp(event : ViewportMouseEvent)
+  function OnKeyDown(event : KeyboardEvent)
   {
     //If ClickedDown is True, then send user to the next level.
-    if(this.ClickedDown)
+    if(Zero.Keyboard.KeyIsDown(this.ButtToNextLevel) && this.NextLevel != null)
     {
       //Load next level
       this.Space.LoadLevel(this.NextLevel);
     }
   }
-
 }

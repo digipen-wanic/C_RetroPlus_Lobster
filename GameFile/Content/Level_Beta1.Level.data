@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{7.59705925, 1.49917603, 30}
+			var Translation = Real3{-1.73894465, 0.219565675, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 8.13140011
+			var Size = 26.9971752
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{7.59705925, 1.49917603, 10}
+			var LookTarget = Real3{-1.73894465, 0.219565675, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -163,7 +163,7 @@ Level
 		var Name = "GameCamera"
 		Transform 
 		{
-			var Translation = Real3{0, 0, 10}
+			var Translation = Real3{0, -1.25, 10}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -225,7 +225,7 @@ Level
 			var FarPlane = 200
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 60
-			var Size = 20
+			var Size = 17.7666302
 		}
 		SoundListener 
 		{

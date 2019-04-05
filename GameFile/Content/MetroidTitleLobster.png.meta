@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "MetroidTitleLobster"
+		var ResourceId = 0x5cfc7587167f49d4
+		var FrameSizeX = 256
+		var FrameSizeY = 224
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 128
+		var OriginY = 112
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

@@ -9,7 +9,7 @@ class SpawnOnDeath : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    if(this.Owner.MarkedForDestruction && this.ArchToSpawn != null)
+    if(this.Owner.MarkedForDestruction && this.ArchToSpawn != null && !this.Space.MarkedForDestruction)
     {
       this.Space.CreateAtPosition(this.ArchToSpawn, this.Owner.Transform.Translation);
     }

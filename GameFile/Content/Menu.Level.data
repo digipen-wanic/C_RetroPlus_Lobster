@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 19.9999905
+			var Size = 8.1313982
 		}
 		EditorCameraController 
 		{
@@ -196,7 +196,7 @@ Level
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
-			var ResolutionOrAspect = Integer2{1920, 1080}
+			var ResolutionOrAspect = Integer2{256, 240}
 			var RenderToViewport = true
 			var ForwardViewportEvents = false
 			var ViewportScaling = ViewportScaling.Letterbox
@@ -210,7 +210,7 @@ Level
 			var FarPlane = 200
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 60
-			var Size = 20
+			var Size = 3.67733955
 		}
 		SoundListener 
 		{
@@ -220,66 +220,10 @@ Level
 	}
 	Cog [ContextId:5]
 	{
-		var Name = "TitleTextBack"
-		Transform 
-		{
-			var Translation = Real3{0.249999985, 5.75, 0}
-			var Scale = Real3{17, 17, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.0247999765, 0, 0.310000002, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Metroid"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 32
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
-	Cog [ContextId:6]
-	{
-		var Name = "TitleTextFront"
-		Transform 
-		{
-			var Translation = Real3{0, 6, 1}
-			var Scale = Real3{17, 17, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{0.0799999237, 0, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Metroid"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 32
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
-	Cog [ContextId:7]
-	{
 		var Name = "StartButton"
 		Transform 
 		{
-			var Translation = Real3{-0.5, -6, -1}
+			var Translation = Real3{-0.5, -22.5, -1}
 			var Scale = Real3{5, 2, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -308,19 +252,20 @@ Level
 		}
 		LStartButton 
 		{
+			var ButtToNextLevel = Keys.Shift
 			var NextLevel = "5c445f9b8905e929:Level_1"
 		}
 	}
-	Cog [ContextId:8]
+	Cog [ContextId:6]
 	{
-		var Name = "StartButtonText"
+		var Name = "MetroidTitleLobster"
 		Transform 
 		{
-			var Translation = Real3{-0.5, -6, 0}
-			var Scale = Real3{3, 3, 1}
+			var Translation = Real3{0, -0.0994329453, 0}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
-		SpriteText 
+		Sprite 
 		{
 			var Visible = true
 			var ViewCulling = true
@@ -332,11 +277,12 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "Start Button"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 32
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
+			var SpriteSource = "5cfc7587167f49d4:MetroidTitleLobster"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
 	}
 }
