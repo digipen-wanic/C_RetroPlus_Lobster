@@ -44,10 +44,15 @@ Level
 			var PlayerBullet = 1
 			var MorphBool = false
 			var BallingBool = false
-			var JumpKey = Keys.Space
+			var JumpKey = Keys.W
 			var RightKey = Keys.D
 			var LeftKey = Keys.A
 			var DownKey = Keys.S
+			var MaxJumps = 1
+		}
+		HUDCreator 
+		{
+			var HUDLevel = "5c784e43f6c23dae:HUDLevel"
 		}
 	}
 	Cog [ContextId:2]
@@ -88,11 +93,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-<<<<<<< HEAD
-			var Translation = Real3{12.6098318, 1.65078425, 20}
-=======
-			var Translation = Real3{2.51058674, -1.72711289, 20}
->>>>>>> 5f3d4425ff7bd47cb4a515ca97879f7f712969cd
+			var Translation = Real3{-0.678234577, -4.68829966, 20.0000019}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,11 +146,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-<<<<<<< HEAD
-			var Size = 22.1033592
-=======
-			var Size = 18.0967293
->>>>>>> 5f3d4425ff7bd47cb4a515ca97879f7f712969cd
+			var Size = 26.9970989
 		}
 		EditorCameraController 
 		{
@@ -158,11 +155,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-<<<<<<< HEAD
-			var LookTarget = Real3{12.6098318, 1.65078425, -4.05646631e-07}
-=======
-			var LookTarget = Real3{2.51058674, -1.72711289, -2.10961531e-07}
->>>>>>> 5f3d4425ff7bd47cb4a515ca97879f7f712969cd
+			var LookTarget = Real3{-0.678234577, -4.68829966, 1.26835459e-06}
 			var MoveSensitivity = 1
 		}
 	}
@@ -240,8 +233,46 @@ Level
 			var Active = true
 			var AttenuationScale = 1
 		}
+		CammeraFollow 
+		{
+			var Target = CogPath
+			{
+				var Path = ""
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 4294967293
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Lag = 0.5
+		}
+		CamFollow 
+		{
+			var Target = CogPath
+			{
+				var Path = ":/StandingSamus"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 5
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Lag = 0.5
+		}
 	}
-	Cog [ContextId:5]
+	Cog [ContextId:6]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -272,34 +303,6 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [ContextId:6]
-	{
-		var Name = "SpriteText"
-		Transform 
-		{
-			var Translation = Real3{46.4479637, -2.45955992, 8.71926545e-07}
-			var Scale = Real3{2, 2, 1}
-			var Rotation = Quaternion{0, 0, 0.707106829, -0.707106829}
-		}
-		SpriteText 
-		{
-			var Visible = true
-			var ViewCulling = true
-			var VisibilityEvents = true
-			var OverrideBoundingBox = false
-			var LocalAabbCenter = Real3{0, 0, 0}
-			var LocalAabbHalfExtents = Real3{1, 1, 1}
-			var GroupSortValue = 0
-			var Material = "582c575af53d18c9:AlphaSprite"
-			var VertexColor = Real4{1, 1, 1, 1}
-			var GeometryMode = SpriteGeometryMode.ZPlane
-			var Text = "This is Door"
-			var Font = "57343753bb4eaaec:NotoSans-Regular"
-			var FontSize = 32
-			var PixelsPerUnit = 128
-			var TextAlign = TextAlign.Center
-		}
-	}
 	Cog [InheritId:"5c7848739dae3226:PowerUp"][ContextId:7]
 	{
 		Transform 
@@ -309,7 +312,7 @@ Level
 			var Scale = Real3{0.5, 0.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc61202deaefc98:StandingSamus"][ContextId:8]
+	Cog [InheritId:"5cc61202deaefc98:StandingSamus"][ContextId:5]
 	{
 		Transform 
 		{
@@ -318,24 +321,86 @@ Level
 			var Scale = Real3{1, 1, 1}
 		}
 	}
-	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:15]
+	Cog [InheritId:"5c7fd7095a090b40:ZoomerPath1"][ContextId:8]
 	{
+		var Name = "ZoomerPath1"
 		Transform 
 		{
-			var Translation = Real3{49.5, -2.5, 1}
+			var Translation = Real3{-8.5, 11, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
-		Sprite 
+	}
+	Cog [InheritId:"5c7fd710599c5342:ZoomerPath2"][ContextId:9]
+	{
+		var Name = "ZoomerPath2"
+		Transform 
 		{
-			var FlipX = false
+			var Translation = Real3{-1.5, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
 		}
 	}
-	Cog [InheritId:"5c7c7d0a7f70e517:Skree"][ContextId:16]
+	Cog [InheritId:"5c7fd73d52c7eede:ZoomerPath3"][ContextId:10]
+	{
+		var Name = "ZoomerPath3"
+		Transform 
+		{
+			var Translation = Real3{34.5, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5c4454f33c6e8a0a:Zoomer"][ContextId:11]
 	{
 		Transform 
 		{
-			var Translation = Real3{25.5, 4.5, 0}
+			var Translation = Real3{8.20749664, 1.79997826, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{4, 4, 1}
+		}
+		SimpleSplineFollower 
+		{
+			var SplineCogPath = CogPath
+			{
+				var Path = ":/ZoomerPath1"
+				var Cog = 8
+			}
+			var LoopMode = SimpleLoopMode.Continue
+		}
+	}
+	Cog [InheritId:"5c4454f33c6e8a0a:Zoomer"][ContextId:12]
+	{
+		Transform 
+		{
+			var Translation = Real3{10.2203531, 1.77380705, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{4, 4, 1}
+		}
+		SimpleSplineFollower 
+		{
+			var SplineCogPath = CogPath
+			{
+				var Path = ":/ZoomerPath2"
+				var Cog = 9
+			}
+			var LoopMode = SimpleLoopMode.Continue
+		}
+	}
+	Cog [InheritId:"5c4454f33c6e8a0a:Zoomer"][ContextId:13]
+	{
+		Transform 
+		{
+			var Translation = Real3{12.4703531, 1.77380705, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{4, 4, 1}
+		}
+	}
+	Cog [InheritId:"5c784878937b1058:LevelDoor"][ContextId:14]
+	{
+		Transform 
+		{
+			var Translation = Real3{46.5, -2.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
