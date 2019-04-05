@@ -40,4 +40,7 @@ class LevelVariables : ZilchComponent
   //The max number of jumps the player can have
   [Property]
   var MaxJumps : Integer = 1;
+  [Property]
+  var MaxHP : Integer = 99;
+  var CurrentHP : Integer = 30;
 }

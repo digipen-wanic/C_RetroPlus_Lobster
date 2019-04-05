@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "EnemyHealth"
+		var ResourceId = 0x5cfd825d2eec5529
+	}
+}

@@ -1,6 +1,7 @@
 /*******************************************
 Xander Panasky
-04/02/19
+Edited By: Andrew Yan
+04/04/19
 breif: The player health being drained 
 *******************************************/
 class Health : ZilchComponent
@@ -15,24 +16,26 @@ class Health : ZilchComponent
   
   function Initialize(init : CogInitializer)
   {
-    this.CurrentHealth = this.MaxHealth;
+    this.MaxHealth = this.LevelSettings.LevelVariables.MaxHP;
     //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
   
   function TakeDamage( damage: Integer)
   {
-    this.CurrentHealth -= damage;
+    var cHP = this.LevelSettings.LevelVariables.CurrentHP;
+    this.Space.DispatchEvent("Damage", ZilchEvent());
+    cHP -= damage;
     if(this.DamageSoundCue != null)
     {
       this.Space.SoundSpace.PlayCue(this.DamageSoundCue);
     }
-    if(this.DestroyAtZero && this.CurrentHealth <= 0)
+    if(this.DestroyAtZero && cHP <= 0)
     {
       this.Owner.Destroy();
     }
-    if(this.CurrentHealth >= this.MaxHealth)
+    if(cHP >= this.MaxHealth)
     {
-      this.CurrentHealth = this.MaxHealth;
+      cHP = this.MaxHealth;
     }
   }
 

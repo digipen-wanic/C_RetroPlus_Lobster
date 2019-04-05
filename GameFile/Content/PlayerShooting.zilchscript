@@ -20,7 +20,6 @@ class PlayerShooting : ZilchComponent
   //The speed of the bullet
   [Property]
   var BullSpeed : Real = 0.25;
-  
   //This variable keeps track of the last button pressed
   var LastButtPressed : Keys = Keys.A;
   

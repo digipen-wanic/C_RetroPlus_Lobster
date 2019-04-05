@@ -1,7 +1,8 @@
 /****************************************
 File Name: BasicCameraMovement
 By: Andrew Yan
-Last Edited: 04/02/2019
+Edited By: Blakely North
+Last Edited: 04/04/2019
 Description: This script will be attached to the camera and help it follow the desired target
 Disclaimer: This script isnt the final version of the camera movement and is only being used for testing
 All content © 2019 DigiPen (USA) Corporation, all rights reserved
@@ -11,6 +12,14 @@ class BasicCameraMovement : ZilchComponent
   //This is the target for the camera to follow
   [Property]
   var Target : CogPath = null;
+  
+  [Property]
+  var MorphTarget : Archetype = null;
+  
+  [Property]
+  var Lag : Real = 0.5;
+  
+  var MorphBall : CogPath = null;
   
   function Initialize(init : CogInitializer)
   {
@@ -22,10 +31,30 @@ class BasicCameraMovement : ZilchComponent
     //This is to make sure it was set properly so we dont crash
     if(this.Target.Cog != null)
     {
+      //change cam pos
       var newPos = this.Target.Cog.Transform.Translation;
-      //adjust z value so the camera doesnt get messed up
       newPos.Z = this.Owner.Transform.Translation.Z;
-      this.Owner.Transform.Translation = newPos;
+      newPos.Y = this.Owner.Transform.Translation.Y;
+      this.Owner.Transform.Translation = Math.Lerp(this.Owner.Transform.Translation,newPos, this.Lag);
+    }
+    else
+    {
+      if(this.MorphTarget != null)
+      {
+        if(this.Space.FindObjectByName != null)
+        {
+          this.MorphBall.Cog.Name = "`this.MorphBall`";
+        }
+      }
+      //This is to make sure it was set properly so we dont crash
+      if(this.MorphBall != null)
+      {
+        //change cam pos
+        var newPos = this.MorphBall.Cog.Transform.Translation;
+        newPos.Z = this.Owner.Transform.Translation.Z;
+        newPos.Y = this.Owner.Transform.Translation.Y;
+        this.Owner.Transform.Translation = Math.Lerp(this.Owner.Transform.Translation,newPos, this.Lag);
+      }
     }
   }
 }

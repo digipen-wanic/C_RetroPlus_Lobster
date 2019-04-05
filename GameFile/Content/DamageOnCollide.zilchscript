@@ -1,22 +1,20 @@
-
-
+//Edited By: Andrew Yan
 class DamageOnCollide : ZilchComponent
 {
   [Property]
   var Damage:Integer = 10;
   function Initialize(init : CogInitializer)
   {
-    Zero.Connect(this.Owner,Events.CollisionStarted, this.OnCollisionStarted);
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner,Events.GroupCollisionStarted, this.OnCollisionStarted);
   }
 
-  function OnCollisionStarted(event : CollisionEvent)
+  function OnCollisionStarted(event : CollisionGroupEvent)
   {
-    if(event.OtherObject.Health != null)
-      event.OtherObject.Health.TakeDamage(this.Damage);
-  }
-
-  function OnLogicUpdate(event : UpdateEvent)
-  {
+    if(event.OtherObject.BoxCollider.CollisionGroup.Name == "Player")
+    {
+    Console.WriteLine("WOW");
+      if(event.OtherObject.Health != null)
+        event.OtherObject.Health.TakeDamage(this.Damage);
+    }
   }
 }

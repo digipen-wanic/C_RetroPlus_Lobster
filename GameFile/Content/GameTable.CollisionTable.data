@@ -163,6 +163,53 @@ CollisionTable
 				var EventOverride = ""
 			}
 		}
+		Object
+		{
+			var TypeA = "5cc7679b31211f54:PlayerBullet"
+			var TypeB = "5cf89c10d271b315:Skree"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5cc7679b31211f54:PlayerBullet"
+			var TypeB = "5cf89c16d29d1589:Zoomer"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = true
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+			CollisionStartBlock 
+			{
+				var SendEventsToA = true
+				var SendEventsToB = true
+				var SendEventsToSpace = false
+				var EventOverride = ""
+			}
+		}
+		Object
+		{
+			var TypeA = "5cc7679f31ad8610:Player"
+			var TypeB = "5cf89c16d29d1589:Zoomer"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = true
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+			CollisionStartBlock 
+			{
+				var SendEventsToA = true
+				var SendEventsToB = true
+				var SendEventsToSpace = false
+				var EventOverride = ""
+			}
+		}
 	}
 	var AutoRegister = true
 }

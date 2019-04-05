@@ -1,0 +1,359 @@
+// Copyright 2017 DigiPen USA Corporation, All Rights Reserved
+// Author: Zero Engine Team
+// Edit by: Andrew Yan
+// Date Edited: 04/03/2019
+// Simple input for a 2d swept character controller.
+class SweptInput2D : ZilchComponent
+{
+  [Dependency] var SweptController : SweptController;
+  [Dependency] var PlayerShooting : PlayerShooting;
+  [Dependency] var Sprite : Sprite;
+  
+  var LeftKey : Keys = Keys.A;
+  var RightKey : Keys = Keys.D;
+  var JumpKey : Keys = Keys.Space;
+  
+  /* Added */
+  //The button up key to aim up
+  var UpKey : Keys = Keys.W;
+  //The button to be pressed to turn into the morphball
+  var DownKey : Keys = Keys.S;
+  
+    //Sprites Needed
+      /*Running*/
+        //Sprite if the player is just running
+        [Property]
+        var NormalRunning : SpriteSource = null;
+        //Sprite if the player is running and shooting
+        [Property]
+        var ForwardRunning : SpriteSource = null;
+        //Sprite if the player is running and aiming up
+        [Property]
+        var UpRunning : SpriteSource = null;
+      /*Standing*/
+        //Sprite if the player is standing and aiming up || Sprite if the player is standing still
+        [Property]
+        var ForwardStand : SpriteSource = null;
+        //Sprite if the player is standing and aiming up
+        [Property]
+        var UpStand : SpriteSource = null;
+      /*Jumping*/
+        //This is the sprite if the player only aims right or left while jumping
+        [Property]
+        var JumpForward : SpriteSource = null;
+        //This is the sprite if the player only aims up
+        [Property]
+        var JumpUp : SpriteSource = null;
+        //Sprite if the player is jumping and moving right or left
+        [Property]
+        var JumpSpin : SpriteSource = null;
+        //Sprite if the player is just jumping
+        [Property]
+        var JumpNormal : SpriteSource = null;
+        
+  //The noise to be played when the player jumps
+  [Property]
+  var JumpNoise : SoundCue = null;
+  
+  //A boolean to keep track if the player is running
+  var RunningBoolean = false;
+  //A boolean to keep track if the player is jumping
+  var JumpingBool = false;
+  //A boolean to signal another script to spawn the morphball
+  var SpawnMorph = false;
+  //A boolean to help hold the last sprite while jumping
+  var HoldJumpSprite : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Safety Check
+    if(this.LevelSettings.LevelVariables != null)
+    {
+      //Set all the keys here
+      this.LeftKey = this.LevelSettings.LevelVariables.LeftKey;
+      this.RightKey = this.LevelSettings.LevelVariables.RightKey;
+      this.DownKey = this.LevelSettings.LevelVariables.DownKey;
+      this.JumpKey = this.LevelSettings.LevelVariables.JumpKey;
+      this.UpKey = this.LevelSettings.LevelVariables.UpKey;
+    }
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+  }
+
+  function OnKeyDown(event : KeyboardEvent)
+  {
+      this.PlayJumpingAnimation();
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //This is used to see if the owner is jumping
+    this.JumpingBool = this.SweptController.Jumping;
+    //Real3 to keep track of the movement
+    var movement = Real3(0, 0, 0);
+    
+    // Check for left/right movment
+    if (Zero.Keyboard.KeyIsDown(this.LeftKey))
+    {
+      //made to be += instead of = so that if both are pressed that they cancel them out
+      movement.X += -1;
+      
+      //Safety check for sprite/animation
+      /*if(this.RunningAnimation != null && this.Owner.Sprite.SpriteSource != this.RunningAnimation)
+      {
+        this.Owner.Sprite.SpriteSource = this.RunningAnimation;
+      }*/
+      
+      this.RunningBoolean = true;
+    }
+    else if (Zero.Keyboard.KeyIsDown(this.RightKey))
+    {
+      //made to be += instead of = so that if both are pressed that they cancel them out
+      movement.X += 1;
+      
+      //Safety check for sprite/animation
+      /* if(this.RunningAnimation != null && this.Owner.Sprite.SpriteSource != this.RunningAnimation)
+      {
+        this.Owner.Sprite.SpriteSource = this.RunningAnimation;
+      }*/
+      
+      this.RunningBoolean = true;
+    }
+    //This is to cover an edge case with the animations
+    else if(!Zero.Keyboard.KeyIsDown(this.RightKey) && !Zero.Keyboard.KeyIsDown(this.LeftKey))
+    {
+      //Set running to false if there is no running input
+      this.RunningBoolean = false;
+    }
+    //Check if the jump key is pressed and if the player can jump
+    if (Zero.Keyboard.KeyIsPressed(this.JumpKey) && this.SweptController.JumpBool)
+    {
+      /*//Safety check for sprite/animation
+      if(this.JumpSprite != null)
+      {
+        this.Owner.Sprite.SpriteSource = this.JumpSprite;
+      }*/
+      
+      this.SweptController.Jump();
+      
+      if(this.SweptController.Jumping)
+      {
+        //Used for non looping sound effects
+        this.Space.SoundSpace.PlayCue(this.JumpNoise);
+      }
+    }
+    else if (Zero.Keyboard.KeyIsReleased(this.JumpKey))
+    {
+      this.SweptController.JumpCancel();
+    }
+    
+    if(this.SweptController.Grounded)
+    {
+      //Calls function
+      this.PlayGroundAnimation();
+    }
+    
+    //Updates the player's movement
+    this.SweptController.Update(movement, event.Dt);
+  }
+  
+  //This function is used to make it easier to read while programming but isnt needed
+  function PlayGroundAnimation()
+  {
+    //Makes sure there is a sprite for everything
+    if(this.ForwardRunning != null && this.NormalRunning != null && this.UpRunning != null && this.ForwardStand != null && this.UpStand != null && this.JumpNormal != null && this.JumpSpin != null && this.JumpForward != null && this.JumpUp != null)
+    {
+      /*Running*/
+      if(this.RunningBoolean && this.SweptController.Grounded && !Zero.Keyboard.KeyIsDown(this.JumpKey))
+      {
+        if(Zero.Keyboard.KeyIsDown(this.PlayerShooting.FireButt))
+        {
+          if(Zero.Keyboard.KeyIsDown(this.UpKey))
+          {
+            if(Zero.Keyboard.KeyIsDown(this.RightKey) && this.Sprite.SpriteSource != this.UpRunning)
+            {
+              this.Sprite.FlipX = false;
+              this.Sprite.SpriteSource = this.UpRunning;
+              
+            }
+            else if(Zero.Keyboard.KeyIsDown(this.LeftKey) && this.Sprite.SpriteSource != this.UpRunning)
+            {
+              this.Sprite.FlipX = true;
+              this.Sprite.SpriteSource = this.UpRunning;
+            }
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.RightKey) && this.Sprite.SpriteSource != this.ForwardRunning)
+          {
+            this.Sprite.FlipX = false;
+            this.Sprite.SpriteSource = this.ForwardRunning;
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.LeftKey) && this.Sprite.SpriteSource != this.ForwardRunning)
+          {
+            this.Sprite.FlipX = true;
+            this.Sprite.SpriteSource = this.ForwardRunning;
+          }
+        }
+        else
+        {
+          if(Zero.Keyboard.KeyIsDown(this.UpKey))
+          {
+            if(Zero.Keyboard.KeyIsDown(this.RightKey) && this.Sprite.SpriteSource != this.UpRunning)
+            {
+              this.Sprite.FlipX = false;
+              this.Sprite.SpriteSource = this.UpRunning;
+              
+            }
+            else if(Zero.Keyboard.KeyIsDown(this.LeftKey) && this.Sprite.SpriteSource != this.UpRunning)
+            {
+              this.Sprite.FlipX = true;
+              this.Sprite.SpriteSource = this.UpRunning;
+            }
+          }
+          
+          else if(Zero.Keyboard.KeyIsDown(this.RightKey))
+          {
+            if(this.Sprite.SpriteSource != this.NormalRunning)
+            {
+              this.Sprite.SpriteSource = this.NormalRunning;
+            }
+            this.Sprite.FlipX = false;
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+          {
+            if(this.Sprite.SpriteSource != this.NormalRunning)
+            {
+              this.Sprite.SpriteSource = this.NormalRunning;
+            }
+            this.Sprite.FlipX = true;
+          }
+        }
+      }
+      /*Standing*/
+      else if(!this.RunningBoolean && this.SweptController.Grounded)
+      {
+        if(Zero.Keyboard.KeyIsDown(this.PlayerShooting.FireButt))
+        {
+          if(Zero.Keyboard.KeyIsDown(this.UpKey))
+          {
+            if(Zero.Keyboard.KeyIsDown(this.RightKey))
+            {
+              this.Sprite.FlipX = false;
+            }
+            else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+            {
+              this.Sprite.FlipX = true;
+            }
+            if(this.Sprite.SpriteSource != this.UpStand)
+            {
+              this.Sprite.SpriteSource = this.UpStand;
+            }
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.RightKey) && this.Sprite.SpriteSource != this.ForwardStand)
+          {
+            this.Sprite.SpriteSource = this.ForwardStand;
+            this.Sprite.FlipX = false;
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.LeftKey) && this.Sprite.SpriteSource != this.ForwardStand)
+          {
+            this.Sprite.SpriteSource = this.ForwardStand;
+            this.Sprite.FlipX = true;
+          }
+        }
+        else
+        {
+          if(Zero.Keyboard.KeyIsDown(this.UpKey))
+          {
+            if(Zero.Keyboard.KeyIsDown(this.RightKey))
+            {
+              this.Sprite.FlipX = false;
+            }
+            else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+            {
+              this.Sprite.FlipX = true;
+            }
+            if(this.Sprite.SpriteSource != this.UpStand)
+            {
+              this.Sprite.SpriteSource = this.UpStand;
+            }
+          }
+          
+          else if(Zero.Keyboard.KeyIsDown(this.RightKey))
+          {
+            this.Sprite.FlipX = false;
+            if(this.Sprite.SpriteSource != this.ForwardStand)
+            {
+              this.Sprite.SpriteSource = this.ForwardStand;
+            }
+          }
+          else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+          {
+            this.Sprite.FlipX = true;
+            if(this.Sprite.SpriteSource != this.ForwardStand)
+            {
+              this.Sprite.SpriteSource = this.ForwardStand;
+            }
+          }
+          else
+          {
+            this.Sprite.SpriteSource = this.ForwardStand;
+          }
+        }
+      }
+    }
+  }
+  
+  function PlayJumpingAnimation()
+  {
+    /*Jumping*/
+    if(this.SweptController.Jumping || !this.SweptController.Grounded)
+    {
+      if(Zero.Keyboard.KeyIsDown(this.PlayerShooting.FireButt))
+      {
+        if(Zero.Keyboard.KeyIsDown(this.UpKey) && this.JumpUp != null)
+        {
+          this.Sprite.SpriteSource = this.JumpUp;
+        }
+        else if(this.Sprite.SpriteSource != this.JumpForward)
+        {
+          this.Sprite.SpriteSource = this.JumpForward;
+        }
+        if(Zero.Keyboard.KeyIsDown(this.RightKey))
+        {
+          this.Sprite.FlipX = false;
+        }
+        else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+        {
+          this.Sprite.FlipX = true;
+        }
+      }
+      else
+      {
+        if(Zero.Keyboard.KeyIsDown(this.RightKey))
+        {
+          this.Sprite.FlipX = false;
+        }
+        else if(Zero.Keyboard.KeyIsDown(this.LeftKey))
+        {
+          this.Sprite.FlipX = true;
+        }
+      }
+    }
+    else if(Zero.Keyboard.KeyIsDown(this.JumpKey) && this.SweptController.Grounded)
+    {
+      if(this.RunningBoolean)
+      {
+        if(this.Sprite.SpriteSource != this.JumpSpin)
+        {
+          this.Sprite.SpriteSource = this.JumpSpin;
+        }
+      }
+      else
+      {
+        if(this.Sprite.SpriteSource != this.JumpNormal)
+        {
+          this.Sprite.SpriteSource = this.JumpNormal;
+        }
+      }
+    }
+  }
+}

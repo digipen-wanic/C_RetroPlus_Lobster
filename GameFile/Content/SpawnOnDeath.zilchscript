@@ -1,0 +1,17 @@
+class SpawnOnDeath : ZilchComponent
+{
+  [Property]
+  var ArchToSpawn : Archetype = null;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Owner.MarkedForDestruction && this.ArchToSpawn != null)
+    {
+      this.Space.CreateAtPosition(this.ArchToSpawn, this.Owner.Transform.Translation);
+    }
+  }
+}

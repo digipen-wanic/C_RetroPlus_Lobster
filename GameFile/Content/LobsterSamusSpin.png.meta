@@ -3,14 +3,14 @@ ImageContent
 {
 	SpriteSourceBuilder 
 	{
-		var Name = "SamusRightShoot"
-		var ResourceId = 0x5c7fa9c03e0f5263
-		var FrameSizeX = 22
-		var FrameSizeY = 33
-		var FrameCount = 1
-		var FrameDelay = 0.0833333358
-		var OriginX = 11
-		var OriginY = 16
+		var Name = "LobsterSamusSpin"
+		var ResourceId = 0x5cfd9761b22838a1
+		var FrameSizeX = 25
+		var FrameSizeY = 25
+		var FrameCount = 3
+		var FrameDelay = 0.020833334
+		var OriginX = 12.5
+		var OriginY = 12.5
 		var PixelsPerUnit = 16
 		var Sampling = SpriteSampling.Nearest
 		var Looping = true

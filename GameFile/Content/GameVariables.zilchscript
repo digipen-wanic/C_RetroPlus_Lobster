@@ -1,0 +1,6 @@
+class GameVariables : ZilchComponent
+{
+  //Curent Health of the player
+  [Property]
+  var CurrentHealth : Integer = 35;
+}

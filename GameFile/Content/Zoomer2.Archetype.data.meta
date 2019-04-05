@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Zoomer2"
+		var ResourceId = 0x5cfd837d00fd2423
+		var LoaderType = "Cog"
+		var Version = 0
+	}
+}

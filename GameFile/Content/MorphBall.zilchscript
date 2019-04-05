@@ -27,7 +27,7 @@ class MorphBall : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-      Console.WriteLine("`this.LevelSettings.LevelVariables.MorphBool`");
+      //Console.WriteLine("`this.LevelSettings.LevelVariables.MorphBool`");
     //Checks to see if the player has the powerup, if the there is an archetype to spawn, and if the player is grounded
     if(this.LevelSettings.LevelVariables.MorphBool && this.MorphBallArch != null && this.SweptController.Grounded)
     {

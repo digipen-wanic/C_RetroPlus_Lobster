@@ -1,7 +1,7 @@
 [Version:1]
 Cog 
 {
-	var Name = "Sprite"
+	var Name = "MorphBall"
 	Transform 
 	{
 		var Translation = Real3{0, 0, 0}
@@ -48,7 +48,7 @@ Cog
 	}
 	MorphBallMovement 
 	{
-		var PlayerArch = "5cfecd1b72f9526a:Samus"
+		var PlayerArch = "5cc61202deaefc98:StandingSamus"
 		var RollSpeed = 1
 		var VertOffset = 1
 	}

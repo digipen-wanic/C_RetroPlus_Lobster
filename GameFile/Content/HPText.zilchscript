@@ -1,0 +1,15 @@
+//Andrew Yan
+//Displays Health
+class HPText : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    this.Owner.SpriteText.Text = "`this.LevelSettings.LevelVariables.CurrentHP`";
+    Zero.Connect(this.Space, "Damage", this.OnDamage);
+  }
+
+  function OnDamage(event : Event)
+  {
+    this.Owner.SpriteText.Text = "`this.LevelSettings.LevelVariables.CurrentHP`";
+  }
+}

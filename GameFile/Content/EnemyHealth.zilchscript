@@ -1,0 +1,28 @@
+class EnemyHealth : ZilchComponent
+{
+  [Property]
+  var Health : Integer = 2;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.Health <= 0)
+    {
+      this.Owner.Destroy();
+    }
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    if(event.OtherObject.Collider.CollisionGroup.Name == "PlayerBullet")
+    {
+      Console.WriteLine("e");
+      this.Health -= 1;
+    }
+  }
+}

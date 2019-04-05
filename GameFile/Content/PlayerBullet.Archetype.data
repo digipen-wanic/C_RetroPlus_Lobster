@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5cfd9af425a9304b:LobsterSamusProjectile"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -68,9 +68,8 @@ Cog
 	PlayerBullet 
 	{
 	}
-	DeathOnTouch 
+	SoundOnCreation 
 	{
-		var NextLevel = "59097123da28242a:Level"
-		var Bullet = true
+		var SoundCue = "5c7fd3adefc6c07d:Metroid_Shooting_Sound1"
 	}
 }

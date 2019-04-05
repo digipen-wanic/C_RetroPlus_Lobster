@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "HPText"
+		var ResourceId = 0x5cfd8fb67fb293fa
+	}
+}
