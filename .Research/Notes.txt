@@ -16,3 +16,7 @@ It takes 65 frames for the scree to travel 13 frames, 5 frames to travel the dis
 The scree moves one pixel every other frame
 
 Samus turns to face the camera for one frame when you rurn from left to right or right to left
+
+Bullets travel 1 block per every 4 frames and travel 3 blocks.
+They are alive for 12 frames.
+They travel their length every frame - 4 px
