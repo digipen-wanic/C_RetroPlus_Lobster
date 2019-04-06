@@ -92,7 +92,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-1.73894465, 0.219565675, 30}
+			var Translation = Real3{34.2104759, -2.04298472, 30}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -145,7 +145,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971752
+			var Size = 60.0832863
 		}
 		EditorCameraController 
 		{
@@ -154,7 +154,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{-1.73894465, 0.219565675, 10}
+			var LookTarget = Real3{34.2104759, -2.04298472, 10}
 			var MoveSensitivity = 1
 		}
 	}
@@ -392,6 +392,7 @@ Level
 		{
 			var JumpForward = "5cfd9c0c80f0127c:LobsterSamusJumpShoot"
 			var JumpUp = "5cfd9c758b4075d5:LobsterSamusJumpAimUp"
+			var JumpNoise = "5c7d31599c945530:SamusJumpbendy"
 		}
 	}
 	Cog [InheritId:"5c7fd7095a090b40:ZoomerPath1"][ContextId:10]
@@ -403,6 +404,10 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
+		HierarchySpline 
+		{
+			var DebugDrawSpline = false
+		}
 	}
 	Cog [InheritId:"5c7fd710599c5342:ZoomerPath2"][ContextId:11]
 	{
@@ -413,6 +418,10 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
+		HierarchySpline 
+		{
+			var DebugDrawSpline = false
+		}
 	}
 	Cog [InheritId:"5c7fd73d52c7eede:ZoomerPath3"][ContextId:12]
 	{
@@ -422,6 +431,10 @@ Level
 			var Translation = Real3{34.5, 11, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
+		}
+		HierarchySpline 
+		{
+			var DebugDrawSpline = false
 		}
 	}
 	Cog [InheritId:"5cfd83710173fb95:Zoomer1"][ContextId:13]
@@ -484,6 +497,12 @@ Level
 			var Translation = Real3{46.5, -2.5, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
+		}
+		Sprite 
+		{
+			var SpriteSource = "5c7fa12c59ebdd7e:Doorbubble000"
+			var FlipX = true
+			var FlipY = false
 		}
 	}
 }
