@@ -1,7 +1,7 @@
 [Version:1]
 SoundCue 
 {
-	var PlayMode = SoundPlayMode.Looping
+	var PlayMode = SoundPlayMode.Single
 	var Volume = 1
 	var UseDecibelVariation = false
 	var VolumeVariation = 0
@@ -18,11 +18,11 @@ SoundCue
 	{
 		Object
 		{
-			var Sound = "5c7fd55032a8a742:Metroid_Level_Music"
+			var Sound = "5c7d31599ca9f260:SamusJumpbendy"
 			var Weight = 1
 			var StartTime = 0
-			var EndTime = 51.0026245
-			var LoopEndTime = 51.0026245
+			var EndTime = 2.11997914
+			var LoopEndTime = 2.11997914
 			var LoopStartTime = 0
 			var LoopTailLength = 0
 			var CrossFadeLoopTail = false

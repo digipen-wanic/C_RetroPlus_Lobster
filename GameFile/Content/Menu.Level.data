@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 8.1313982
+			var Size = 10.9762392
 		}
 		EditorCameraController 
 		{
@@ -253,7 +253,7 @@ Level
 		LStartButton 
 		{
 			var ButtToNextLevel = Keys.Shift
-			var NextLevel = "5c445f9b8905e929:Level_1"
+			var NextLevel = "5c7ee844a79d7773:Level_Beta1"
 		}
 	}
 	Cog [ContextId:6]
@@ -278,6 +278,35 @@ Level
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
 			var SpriteSource = "5cfc7587167f49d4:MetroidTitleLobster"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:7]
+	{
+		var Name = "Sprite"
+		Transform 
+		{
+			var Translation = Real3{0.543510437, -0.67377305, 4}
+			var Scale = Real3{1.28269839, 0.273993999, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0, 0, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
